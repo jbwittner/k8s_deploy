@@ -1,0 +1,5 @@
+global:
+  postgresql:
+    auth:
+      username: bankwiz_user
+      database: bankwiz_db

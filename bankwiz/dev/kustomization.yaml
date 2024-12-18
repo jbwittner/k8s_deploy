@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: bankwiz-dev
+resources:
+- ../common
+images:
+- name: bankwiz-server-image
+  newName: ghcr.io/jbwittner/bankwiz_server
+  newTag: develop-latest
+configMapGenerator:
+- name: bankwiz-server-additional-config
+  files:
+    - application.yaml
+secretGenerator:
+- name: bankwiz-secret
+  envs:
+  - .env.dev.secret
+patches:
+- path: ingress-patch.json
+  target:
+    kind: Ingress
+    name: bankwiz-ingress
+- path: additional-config.yaml
+  target:
+    kind: Deployment
+    name: bankwiz-deployment

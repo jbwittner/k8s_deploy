@@ -1,0 +1,18 @@
+application:
+  db:
+    host: bankwiz-db-postgresql.bankwiz-dev.svc.cluster.local
+    port: 5432
+    name: bankwiz_db
+    user: bankwiz_user
+  web:
+    url: https://api.dev.bankwiz.bytedragon.tech
+    cors-allowed-origins:
+      - https://app.dev.bankwiz.bytedragon.tech
+      - http://localhost:5173
+      - http://localhost:58351
+  oauth2:
+    issuer-uri: https://bankwiz-development.eu.auth0.com/
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate

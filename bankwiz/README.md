@@ -5,6 +5,15 @@
 ## Commandes
 
 Pour lancer un déploiement, il suffit de lancer la commande suivante:
+
 ```bash
 kubectl apply -k dev
 ```
+
+Pour update une image, sans changer les fichiers de configuration, il suffit de lancer la commande suivante (en remplaçant `sha1` par le sha1 de l'image):
+
+```bash
+kubectl set image deployment/bankwiz-deployment bankwiz-server-container=ghcr.io/jbwittner/bankwiz_server:develop-sha1 -n bankwiz-dev
+```
+
+L'update de l'image a pour effet de redémarrer les pods avec la nouvelle image.

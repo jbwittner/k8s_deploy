@@ -8,3 +8,7 @@ Ce répertoire contient les fichiers nécessaires pour déployer différents ser
 - `kubectl` installé et configuré pour le cluster
 - `helm` installé
 - `kustomize` installé
+
+## Deploiement
+
+ -> [Bankwiz](./bankwiz/README.md) <-

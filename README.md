@@ -7,3 +7,4 @@ Ce répertoire contient les fichiers nécessaires pour déployer différents ser
 - Un cluster Kubernetes
 - `kubectl` installé et configuré pour le cluster
 - `helm` installé
+- `kustomize` installé

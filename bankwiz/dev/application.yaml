@@ -8,8 +8,7 @@ application:
     url: https://api.dev.bankwiz.bytedragon.tech
     cors-allowed-origins:
       - https://app.dev.bankwiz.bytedragon.tech
-      - http://localhost:5173
-      - http://localhost:58351
+      - http://localhost:53750
   oauth2:
     issuer-uri: https://bankwiz-development.eu.auth0.com/
 spring:

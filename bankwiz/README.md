@@ -17,3 +17,9 @@ kubectl set image deployment/bankwiz-deployment bankwiz-server-container=ghcr.io
 ```
 
 L'update de l'image a pour effet de redémarrer les pods avec la nouvelle image.
+
+## Secrets
+
+il faut un fichier .env.TYPE_ENV.secret pour gérer des secrets (ces fichiers sont pas commitables).
+
+Il suffit de copier le fichier .env.example.secret et de le renommer en .env.TYPE_ENV.secret. (TYPE_ENV = dev, prod, ...)

@@ -11,4 +11,5 @@ Ce répertoire contient les fichiers nécessaires pour déployer différents ser
 
 ## Deploiement
 
- -> [Bankwiz](./bankwiz/README.md) <-
+-> [Bankwiz](./bankwiz/README.md) <-
+-> [Ingress Nginx](./nginx/README.md) <-

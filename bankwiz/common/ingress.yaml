@@ -2,6 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: bankwiz-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://6ebbf295.bankwiz-frontend-dev.pages.dev, http://localhost:5174"
 spec:
   rules:
     - host: placeholder.example.com

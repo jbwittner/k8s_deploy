@@ -1,0 +1,17 @@
+application:
+  db:
+    host: ssh-guardian-db-postgresql.ssh-guardian-dev.svc.cluster.local
+    port: 5432
+    name: ssh_guardian_db
+    user: ssh_guardian_user
+  web:
+    url: https://api.dev.bankwiz.bytedragon.tech
+    cors-allowed-origins:
+      - https://app.dev.bankwiz.bytedragon.tech
+      - http://localhost:5174
+  oauth2:
+    issuer-uri: https://bankwiz-development.eu.auth0.com/
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate

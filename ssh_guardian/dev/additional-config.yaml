@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssh-guardian-app
+spec:
+  template:
+    spec:
+      containers:
+        - name: ssh-guardian-server-container
+          volumeMounts:
+            - name: ssh-guardian-server-additional-volume
+              mountPath: /app/config
+      volumes:
+        - name: ssh-guardian-server-additional-volume
+          configMap:
+            name: ssh-guardian-server-additional-config

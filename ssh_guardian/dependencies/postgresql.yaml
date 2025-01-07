@@ -1,0 +1,5 @@
+global:
+  postgresql:
+    auth:
+      username: ssh_guardian_user
+      database: ssh_guardian_db

@@ -1,7 +1,7 @@
 ingress:
   enabled: true
   hosts:
-    - host: quickwit.bytedragon.tech
+    - host: https://grafana.bytedragon.tech
       paths:
         - path: /
           pathType: ImplementationSpecific

@@ -4,17 +4,18 @@ application:
     port: 5432
     name: bankwiz_db
     user: bankwiz_user
-  web:
-    url: https://api.dev.bankwiz.bytedragon.tech
-    cors-allowed-origins:
-      - https://app.dev.bankwiz.bytedragon.tech
-      - http://localhost:5174
-      - http://localhost:5173
-      - http://localhost:4174
-      - http://localhost:4173
   oauth2:
     issuer-uri: https://bankwiz-development.eu.auth0.com/
 spring:
   jpa:
     hibernate:
       ddl-auto: validate
+logging:
+  level:
+    root: INFO
+    fr.bankwiz.server:
+      application.aop: INFO
+      domain.service: INFO
+      infrastructure:
+        spijpa: WARN
+        apirest: WARN

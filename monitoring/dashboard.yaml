@@ -2,4 +2,4 @@ grafana:
   ingress:
     enabled: true
     hosts: 
-      - https://grafana.bytedragon.tech
+      - grafana.bytedragon.tech

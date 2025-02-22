@@ -1,6 +1,4 @@
 controller:
-  nodeSelector: 
-    node-role.kubernetes.io/master: "true"
   ingressClassResource: 
     default: true
   watchIngressWithoutClass: true

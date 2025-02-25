@@ -1,0 +1,18 @@
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  hosts:
+    - name: stirling.bytedragon.tech
+      path: /
+resources:
+  limits:
+    cpu: 100m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+probes:
+  liveness:
+    initialDelaySeconds: 120
+  readiness:
+    initialDelaySeconds: 120

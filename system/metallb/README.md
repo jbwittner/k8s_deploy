@@ -11,3 +11,7 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.9/confi
 ```bash
 kubectl create -f ipaddresspool.yaml
 ```
+
+```bash
+kubectl create -f l2advertisement.yaml
+```

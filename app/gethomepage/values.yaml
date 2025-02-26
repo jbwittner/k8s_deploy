@@ -1,0 +1,57 @@
+config:
+  bookmarks:
+    - Developer:
+        - Github:
+            - abbr: GH
+              href: https://github.com/
+    - Social:
+        - Reddit:
+            - icon: reddit.png
+              href: https://reddit.com/
+              description: The front page of the internet
+    - Entertainment:
+        - YouTube:
+            - abbr: YT
+              href: https://youtube.com/
+  services:
+    - Monitoring:
+        - Grafana:
+            icon: grafana.png
+            href: https://grafana.bytedragon.tech/
+            description: Grafana
+    - Tools:
+        - IT Tools:
+            icon: it-tools.png
+            href: https://ittools.bytedragon.tech/
+            description: Handy tools for developers
+        - Stirling PDF:
+            icon: mdi-file-pdf-box
+            href: https://stirling.bytedragon.tech/
+            description: PDF manipulation tool
+  widgets:
+    - search:
+        provider: google
+        target: _blank
+        focus: true
+        showSearchSuggestions: true
+  kubernetes:
+    mode: cluster
+  settings:
+
+# The service account is necessary to allow discovery of other services
+serviceAccount:
+  create: true
+  name: homepage
+
+# This enables the service account to access the necessary resources
+enableRbac: true
+
+ingress:
+  main:
+    enabled: true
+    ingressClassName: "nginx"
+    hosts:
+      - host: homepage.bytedragon.tech
+        paths:
+          - path: /
+            pathType: Prefix

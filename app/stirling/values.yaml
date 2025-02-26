@@ -6,13 +6,13 @@ ingress:
       path: /
 resources:
   limits:
-    cpu: 100m
-    memory: 256Mi
+    cpu: 500m  # Augmenté pour accélérer le démarrage
+    memory: 512Mi  # Augmenté pour éviter les OOM
   requests:
     cpu: 100m
     memory: 256Mi
 probes:
   liveness:
-    initialDelaySeconds: 120
+    initialDelaySeconds: 60
   readiness:
-    initialDelaySeconds: 120
+    initialDelaySeconds: 60

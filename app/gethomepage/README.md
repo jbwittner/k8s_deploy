@@ -4,6 +4,9 @@ https://gethomepage.dev/
 
 ```bash
 helm repo add jameswynn https://jameswynn.github.io/helm-charts
+```
+
+```bash
 helm upgrade --install homepage jameswynn/homepage -f values.yaml -n homepage --create-namespace
 ```
 

@@ -12,6 +12,10 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm upgrade --install --namespace monitoring dashboard prometheus-community/kube-prometheus-stack -f dashboard.yaml --create-namespace
 ```
 
+```bash
+helm uninstall dashboard
+```
+
 ## Quickwit
 
 https://github.com/quickwit-oss/helm-charts/tree/main/charts/quickwit

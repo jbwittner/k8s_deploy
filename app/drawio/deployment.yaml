@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: draw-io-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: draw-io
+  template:
+    metadata:
+      labels:
+        app: draw-io
+    spec:
+      containers:
+        - name: draw-io-container
+          image: jgraph/drawio:latest
+          imagePullPolicy: Always

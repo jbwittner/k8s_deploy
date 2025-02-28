@@ -18,6 +18,14 @@ config:
             href: https://grafana.bytedragon.tech/
             description: Grafana
     - Tools:
+        - Draw.io:
+            icon: draw-io.png
+            href: https://drawio.bytedragon.tech/
+            description: Online diagram software
+        - Excalidraw:
+            icon: excalidraw.png
+            href: https://excalidraw.bytedragon.tech/
+            description: Virtual collaborative whiteboard tool
         - IT Tools:
             icon: it-tools.png
             href: https://ittools.bytedragon.tech/

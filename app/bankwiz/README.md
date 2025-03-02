@@ -2,13 +2,7 @@
 
 `Kustomize` est utisée pour la gestion des fichiers de configuration de l'application `bankwiz`.
 
-## Postgres
 
-L'application a besoin de Postgres pour fonctionner. Pour déployer Postgres, il suffit de lancer la commande suivante:
-
-```bash
-helm upgrade --install bankwiz-db oci://registry-1.docker.io/bitnamicharts/postgresql -f dependencies/postgresql.yaml -n bankwiz-dev --create-namespace
-```
 
 
 ## Commandes

@@ -17,7 +17,7 @@ metadata:
   name: infra-metallb
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 10m0s
   path: ./gitops/infrastructure/metallb
   prune: true
   sourceRef:
@@ -32,7 +32,7 @@ metadata:
 spec:
   dependsOn:
     - name: infra-metallb
-  interval: 1m0s
+  interval: 10m0s
   path: ./gitops/infrastructure/ingress-nginx
   prune: true
   sourceRef:

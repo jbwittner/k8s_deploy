@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ingress-nginx-release
+  namespace: ingress-nginx
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: ingress-nginx # Nom du chart
+      version: 4.12.0  # Version du chart
+      sourceRef:
+        kind: HelmRepository
+        name: ingress-nginx-repository
+        namespace: ingress-nginx
+  values:
+    watchIngressWithoutClass: true # Permet de regarder les ingress sans classe
+    ingressClassResource:
+      default: true

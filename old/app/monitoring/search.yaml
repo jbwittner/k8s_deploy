@@ -1,7 +1,0 @@
-ingress:
-  enabled: true
-  hosts:
-    - host: https://grafana.bytedragon.tech
-      paths:
-        - path: /
-          pathType: ImplementationSpecific

@@ -1,5 +1,9 @@
 # Longhorn
 
+Pour utiliser Longhorn il ne faut pas oublier de labeliser le namespace `longhorn-system` avec `pod-security.kubernetes.io/enforce=privileged`.
+
+De plus il faut pas gérer le namespace `longhorn-system` avec FluxCD.
+
 ```
 helm repo add longhorn https://charts.longhorn.io
 ```

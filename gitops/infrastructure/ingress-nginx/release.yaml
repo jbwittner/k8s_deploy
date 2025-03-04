@@ -8,15 +8,12 @@ spec:
   chart:
     spec:
       chart: ingress-nginx # Nom du chart
-      version: 69.7.2  # Version du chart
+      version: 4.12.0  # Version du chart
       sourceRef:
         kind: HelmRepository
         name: ingress-nginx-repository
         namespace: ingress-nginx
   values:
-    grafana:
-      ingress:
-        enabled: true
-        ingressClassName: nginx
-        hosts: 
-          - grafana.bytedragon.tech
+    watchIngressWithoutClass: true # Permet de regarder les ingress sans classe
+    ingressClassResource:
+      default: true

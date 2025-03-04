@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: stirlingpdf-release
+  namespace: stirlingpdf
+spec:
+  interval: 1m # Interval de synchronisation avec le repository
+  chart:
+    spec:
+      chart: stirling-pdf-chart # Nom du chart
+      version: 1.7.0  # Version du chart
+      sourceRef:
+        kind: HelmRepository
+        name: stirlingpdf-repository
+        namespace: stirlingpdf
+  values:
+    replicaCount: 1
+    ingress:
+      enabled: true
+      hosts:
+        - name: stirling.bytedragon.tech
+          path: /
+    resources:
+      limits:
+        memory: 512Mi  # Augmenté pour éviter les OOM
+      requests:
+        cpu: 10m
+        memory: 512Mi  # Augmenté pour éviter les OOM

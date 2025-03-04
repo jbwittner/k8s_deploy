@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: monitoring-release
+  namespace: monitoring
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: kube-prometheus-stack # Nom du chart
+      version: 4.12.0  # Version du chart
+      sourceRef:
+        kind: HelmRepository
+        name: ingress-nginx-repository
+        namespace: monitoring
+  values:
+    watchIngressWithoutClass: true # Permet de regarder les ingress sans classe
+    ingressClassResource:
+      default: true

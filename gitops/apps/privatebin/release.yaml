@@ -16,13 +16,11 @@ spec:
   values:
     ingress:
       enabled: true
-      annotations:
-        kubernetes.io/ingress.class: nginx
-    hosts:
-      - host: privatebin.bytedragon.tech
-        paths:
-          - path: "/"
-            pathType: Prefix
+      hosts:
+        - host: privatebin.bytedragon.tech
+          paths:
+            - path: "/"
+              pathType: Prefix
     resources:
       limits:
         memory: 512Mi  # Augmenté pour éviter les OOM

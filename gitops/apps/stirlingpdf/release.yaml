@@ -15,12 +15,13 @@ spec:
         namespace: stirlingpdf
   values:
     replicaCount: 1
-    enabled: true
-    annotations:
-      kubernetes.io/ingress.class: nginx
-      hosts:
-        - name: stirling.bytedragon.tech
-          path: /
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        hosts:
+          - name: stirling.bytedragon.tech
+            path: /
     resources:
       limits:
         memory: 512Mi  # Augmenté pour éviter les OOM

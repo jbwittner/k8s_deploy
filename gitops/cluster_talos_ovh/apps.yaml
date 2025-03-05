@@ -6,6 +6,7 @@ metadata:
 spec:
   dependsOn:
     - name: infra-ingress-nginx
+    - name: infra-sealed-secrets
   interval: 1m0s
   path: ./gitops/apps/monitoring
   prune: true

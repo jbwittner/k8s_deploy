@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: monitoring
 resources:
   - namespace.yaml
+  - sealed-secret.yaml
   - repository.yaml
   - release.yaml

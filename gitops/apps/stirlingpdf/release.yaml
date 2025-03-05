@@ -17,11 +17,10 @@ spec:
     replicaCount: 1
     ingress:
       enabled: true
-      annotations:
-        kubernetes.io/ingress.class: nginx
-        hosts:
-          - name: stirling.bytedragon.tech
-            path: /
+      ingressClassName: nginx
+      hosts:
+        - name: stirling.bytedragon.tech
+          path: /
     resources:
       limits:
         memory: 512Mi  # Augmenté pour éviter les OOM

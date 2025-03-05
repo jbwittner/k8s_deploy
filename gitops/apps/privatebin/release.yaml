@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: privatebin # Nom du chart
-      version: 1.7.0  # Version du chart
+      version: 0.22.1  # Version du chart
       sourceRef:
         kind: HelmRepository
         name: privatebin-repository

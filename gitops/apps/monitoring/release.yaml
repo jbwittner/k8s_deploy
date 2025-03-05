@@ -20,5 +20,7 @@ spec:
         ingressClassName: nginx
         hosts: 
           - grafana.bytedragon.tech
-      adminUser: ${admin_login}
-      adminPassword: ${admin_password}
+      admin:
+        existingSecret: monitoring-secret
+        userKey: admin_login
+        passwordKey: admin_password

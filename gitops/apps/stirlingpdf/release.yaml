@@ -15,8 +15,9 @@ spec:
         namespace: stirlingpdf
   values:
     replicaCount: 1
-    ingress:
-      enabled: true
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
       hosts:
         - name: stirling.bytedragon.tech
           path: /

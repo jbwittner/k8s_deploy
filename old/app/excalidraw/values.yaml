@@ -1,8 +1,0 @@
-ingress:
-  enabled: true
-  className: "nginx"
-  hosts:
-    - host: excalidraw.bytedragon.tech
-      paths:
-        - path: /
-          pathType: Prefix

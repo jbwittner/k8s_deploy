@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: sealed-secrets-release
-  namespace: flux-system
+  namespace: kube-system
 spec:
   interval: 1m
   chart:
@@ -11,8 +11,8 @@ spec:
       version: 2.17.1  # Version du chart
       sourceRef:
         kind: HelmRepository
-        name: sealed-secrets
-      version: ">=1.15.0-0"
+        name: sealed-secrets-repository
+        namespace: kube-system
   releaseName: sealed-secrets-controller
   targetNamespace: flux-system
   install:

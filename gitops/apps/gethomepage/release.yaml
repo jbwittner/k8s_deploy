@@ -23,6 +23,19 @@ spec:
             - Une tasse de café:
                 - abbr: UTC
                   href: https://une-tasse-de.cafe/
+        - IA:
+            - ChatGPT:
+                - abbr: CGPT
+                  href: https://chat.openai.com/
+            - Github Copilot:
+                - abbr: GC
+                  href: https://copilot.github.com/
+            - Perplexity:
+                - abbr: PP
+                  href: https://www.perplexity.ai/
+            - Mistral:
+                - abbr: M
+                  href: https://chat.mistral.ai/
         - Entertainment:
             - YouTube:
                 - abbr: YT
@@ -54,6 +67,11 @@ spec:
                 icon: mdi-content-paste
                 href: https://privatebin.bytedragon.tech/
                 description: Minimalist, open source online pastebin
+        - Misc:
+            - Open WebUI :
+                icon: chatgpt.png
+                href: https://openwebui.bytedragon.tech/
+                description: Self-hosted AI interface
       widgets:
         - search:
             provider: google

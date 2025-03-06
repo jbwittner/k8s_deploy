@@ -20,7 +20,7 @@ spec:
       class: nginx
       host: openwebui.bytedragon.tech
     pipelines:
-      enabled: false
+      enabled: true
     ollama:
       enabled: false
     redis-cluster:

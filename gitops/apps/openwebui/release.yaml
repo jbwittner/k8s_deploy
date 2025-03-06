@@ -19,3 +19,33 @@ spec:
       enabled: true
       class: nginx
       host: openwebui.bytedragon.tech
+    ollama:
+      enabled: false
+    redis-cluster:
+      enabled: true
+    livenessProbe:
+      httpGet:
+        path: /health
+        port: http
+      failureThreshold: 1
+      periodSeconds: 10
+    readinessProbe:
+      httpGet:
+        path: /health/db
+        port: http
+      failureThreshold: 1
+      periodSeconds: 10
+    startupProbe:
+      httpGet:
+        path: /health
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 5
+      failureThreshold: 20
+    extraEnvVars:
+      - name: OPENAI_API_KEY
+        valueFrom:
+          secretKeyRef:
+            name: openwebui-secrets
+            key: openai-api-key
+    

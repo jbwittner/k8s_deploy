@@ -46,6 +46,6 @@ spec:
       - name: OPENAI_API_KEY
         valueFrom:
           secretKeyRef:
-            name: openwebui-secrets
+            name: openwebui-secret
             key: openai-api-key
     

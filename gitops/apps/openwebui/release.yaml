@@ -7,7 +7,7 @@ spec:
   interval: 1m # Interval de synchronisation avec le repository
   chart:
     spec:
-      chart: openwebui-chart # Nom du chart
+      chart: open-webui # Nom du chart
       version: 5.20.0  # Version du chart
       sourceRef:
         kind: HelmRepository

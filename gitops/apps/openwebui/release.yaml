@@ -19,10 +19,12 @@ spec:
       enabled: true
       class: nginx
       host: openwebui.bytedragon.tech
+    pipelines:
+      enabled: false
     ollama:
       enabled: false
     redis-cluster:
-      enabled: true
+      enabled: false
     livenessProbe:
       httpGet:
         path: /health

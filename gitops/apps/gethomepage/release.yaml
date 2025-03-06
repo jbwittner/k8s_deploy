@@ -67,11 +67,6 @@ spec:
                 icon: mdi-content-paste
                 href: https://privatebin.bytedragon.tech/
                 description: Minimalist, open source online pastebin
-        - Misc:
-            - Open WebUI :
-                icon: chatgpt.png
-                href: https://openwebui.bytedragon.tech/
-                description: Self-hosted AI interface
       widgets:
         - search:
             provider: google

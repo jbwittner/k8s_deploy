@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: openwebui
 resources:
   - namespace.yaml
+  - sealed-secret.yaml
   - repository.yaml
   - release.yaml

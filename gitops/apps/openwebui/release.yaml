@@ -17,7 +17,5 @@ spec:
     replicaCount: 1
     ingress:
       enabled: true
-      ingressClassName: nginx
-      hosts:
-        - name: openwebui.bytedragon.tech
-          path: /
+      class: nginx
+      host: openwebui.bytedragon.tech

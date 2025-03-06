@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: openwebui-release
+  namespace: openwebui
+spec:
+  interval: 1m # Interval de synchronisation avec le repository
+  chart:
+    spec:
+      chart: stirling-pdf-chart # Nom du chart
+      version: 5.20.0  # Version du chart
+      sourceRef:
+        kind: HelmRepository
+        name: openwebui-repository
+        namespace: openwebui
+  values:
+    replicaCount: 1
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      hosts:
+        - name: openwebui.bytedragon.tech
+          path: /

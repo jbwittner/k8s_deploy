@@ -44,10 +44,3 @@ spec:
       initialDelaySeconds: 30
       periodSeconds: 5
       failureThreshold: 20
-    extraEnvVars:
-      - name: OPENAI_API_KEY
-        valueFrom:
-          secretKeyRef:
-            name: openwebui-secret
-            key: openai-api-key
-    

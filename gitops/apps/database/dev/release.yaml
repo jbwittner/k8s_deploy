@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: database-dev-release
+  namespace: database-dev
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: postgresql # Nom du chart
+      version: 16.4.16
+      sourceRef:
+        kind: OCIRepository
+        name: database-dev-repository
+        namespace: database-dev
+  values:
+    global:
+      postgresql:
+        postgresqlPassword: my-password

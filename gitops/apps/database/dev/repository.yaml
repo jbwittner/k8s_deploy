@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: database-dev-repository
+  namespace: database-dev
+spec:
+  interval: 1m
+  url: oci://registry-1.docker.io/bitnamicharts/postgresql

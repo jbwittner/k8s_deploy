@@ -17,4 +17,4 @@ spec:
     global:
       postgresql:
         auth:
-          postgresqlPassword: my-password
+          postgresPassword: my-password

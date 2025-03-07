@@ -17,5 +17,6 @@ spec:
     global:
       postgresql:
         auth:
+          existingSecret: database-dev-secret
           secretKeys:
             adminPasswordKey: admin_postgres_password

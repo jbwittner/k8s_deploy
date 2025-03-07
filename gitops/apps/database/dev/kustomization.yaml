@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: database-dev
 resources:
   - namespace.yaml
+  - sealed-secrets.yaml
   - repository.yaml
   - release.yaml

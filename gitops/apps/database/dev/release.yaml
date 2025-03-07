@@ -17,4 +17,5 @@ spec:
     global:
       postgresql:
         auth:
-          postgresPassword: my-password
+          secretKeys:
+            adminPasswordKey: admin_postgres_password

@@ -10,7 +10,7 @@ spec:
       chart: postgresql # Nom du chart
       version: 16.4.16
       sourceRef:
-        kind: OCIRepository
+        kind: HelmRepository
         name: database-dev-repository
         namespace: database-dev
   values:

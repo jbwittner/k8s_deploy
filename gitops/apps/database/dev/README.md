@@ -1,5 +1,7 @@
 ## Postgres
 
+https://github.com/bitnami/charts/tree/main/bitnami/postgresql
+
 L'application a besoin de Postgres pour fonctionner. Pour déployer Postgres, il suffit de lancer la commande suivante:
 
 ```bash

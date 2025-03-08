@@ -24,13 +24,15 @@ spec:
         existingSecret: monitoring-secret
         userKey: admin_login
         passwordKey: admin_password
-      alertmanagerSpec:
-        resources:
-          requests:
-            memory: 10Mi
-            cpu: 200m
-      admissionWebhooks:
-        resources:
-          requests:
-            memory: 10Mi
-            cpu: 200m
+      plugins:
+        - https://github.com/quickwit-oss/quickwit-datasource/releases/download/v0.4.6/quickwit-quickwit-datasource-0.4.6.zip;quickwit-quickwit-datasource
+      datasources:
+        datasources.yaml:
+          apiVersion: 1
+          datasources:
+            - name: Cluster Logs
+              type: quickwit-quickwit-datasource
+              url: http://quickwit-searcher.logging.svc.cluster.local:7280/api/v1
+              jsonData:
+                index: otel-logs-v0_7
+                logMessageField: body.message

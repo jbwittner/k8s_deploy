@@ -14,6 +14,10 @@ spec:
         name: privatebin-repository
         namespace: privatebin
   values:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 100Mi
     ingress:
       enabled: true
       annotations:

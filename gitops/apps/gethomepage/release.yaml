@@ -14,6 +14,10 @@ spec:
         name: homepage-repository
         namespace: homepage
   values:
+    resources:
+      requests:
+        cpu: 30m
+        memory: 150Mi
     config:
       bookmarks:
         - Developer:

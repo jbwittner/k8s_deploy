@@ -24,3 +24,13 @@ spec:
         existingSecret: monitoring-secret
         userKey: admin_login
         passwordKey: admin_password
+      alertmanagerSpec:
+        resources:
+          requests:
+            memory: 10Mi
+            cpu: 200m
+      admissionWebhooks:
+        resources:
+          requests:
+            memory: 10Mi
+            cpu: 200m

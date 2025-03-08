@@ -22,8 +22,6 @@ spec:
         - name: stirling.bytedragon.tech
           path: /
     resources:
-      limits:
-        memory: 512Mi  # Augmenté pour éviter les OOM
       requests:
         cpu: 10m
-        memory: 512Mi  # Augmenté pour éviter les OOM
+        memory: 300Mi  # Augmenté pour éviter les OOM

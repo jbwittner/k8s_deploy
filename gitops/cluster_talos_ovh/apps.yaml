@@ -128,7 +128,6 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: infra-metallb
     - name: infra-sealed-secrets
   interval: 1m0s
   path: ./gitops/apps/database/dev

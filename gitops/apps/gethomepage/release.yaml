@@ -31,6 +31,12 @@ spec:
             - Une tasse de café:
                 - abbr: UTC
                   href: https://une-tasse-de.cafe/
+            - Cloudflare:
+                - abbr: CF
+                  href: https://dash.cloudflare.com/
+            - Ovh:
+                - abbr: OVH
+                  href: https://www.ovhcloud.com
         - IA:
             - ChatGPT:
                 - abbr: CGPT
@@ -44,10 +50,6 @@ spec:
             - Mistral:
                 - abbr: M
                   href: https://chat.mistral.ai/
-        - Entertainment:
-            - YouTube:
-                - abbr: YT
-                  href: https://youtube.com/
       services:
         - Monitoring:
             - Grafana:

@@ -54,6 +54,11 @@ spec:
                 icon: grafana.png
                 href: https://grafana.bytedragon.tech/
                 description: Grafana
+        - Docs:
+            - Docusaurus:
+                icon: docusaurus.png
+                href: https://blog.bytedragon.tech/
+                description: Docusaurus
         - Tools:
             - Draw.io:
                 icon: draw-io.png

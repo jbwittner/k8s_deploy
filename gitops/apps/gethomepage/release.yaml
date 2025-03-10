@@ -20,6 +20,10 @@ spec:
         memory: 150Mi
     config:
       bookmarks:
+        - Gestion:
+            - Ticktick:
+                - abbr: TT
+                  href: https://ticktick.com/
         - Developer:
             - Github:
                 - abbr: GH

@@ -1,0 +1,21 @@
+application:
+  db:
+    host: bankwiz-db-postgresql.bankwiz-dev.svc.cluster.local
+    port: 5432
+    name: bankwiz_db
+    user: bankwiz_user
+  oauth2:
+    issuer-uri: https://bankwiz-development.eu.auth0.com/
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+logging:
+  level:
+    root: INFO
+    fr.bankwiz.server:
+      application.aop: INFO
+      domain.service: INFO
+      infrastructure:
+        spijpa: WARN
+        apirest: WARN

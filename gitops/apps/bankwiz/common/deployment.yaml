@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bankwiz-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bankwiz-server
+  template:
+    metadata:
+      labels:
+        app: bankwiz-server
+    spec:
+      containers:
+        - name: bankwiz-server-container
+          image: bankwiz-server-image
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: bankwiz-secret
+            - configMapRef:
+                name: bankwiz-config
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "500Mi"
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/liveness
+              port: 9595
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 30
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/readiness
+              port: 9595
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 30

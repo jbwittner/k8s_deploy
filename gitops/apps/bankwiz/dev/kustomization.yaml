@@ -12,10 +12,6 @@ configMapGenerator:
 - name: bankwiz-server-additional-config
   files:
     - application.yaml
-secretGenerator:
-- name: bankwiz-secret
-  envs:
-  - .env.dev.secret
 patches:
 - path: ingress-patch.json
   target:

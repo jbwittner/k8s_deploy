@@ -15,7 +15,7 @@ spec:
         namespace: database-dev
   values:
     global:
-      global.defaultStorageClass: longhorn-static-retain
+      defaultStorageClass: longhorn-static-retain
       postgresql:
         auth:
           existingSecret: database-dev-secret

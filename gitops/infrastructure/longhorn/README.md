@@ -16,3 +16,4 @@ kubectl label namespace longhorn-system pod-security.kubernetes.io/enforce=privi
 helm install longhorn longhorn/longhorn --namespace longhorn-system --create-namespace --version 1.8.0
 ```
 
+Il faut au moins une class en ReclaimPolicy Retain pour les volumes Longhorn.

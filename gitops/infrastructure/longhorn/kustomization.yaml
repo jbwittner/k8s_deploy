@@ -4,3 +4,4 @@ namespace: longhorn-system
 resources:
   - repository.yaml
   - release.yaml
+  - longhorn-static-retain.yaml

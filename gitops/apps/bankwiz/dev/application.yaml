@@ -1,6 +1,6 @@
 application:
   db:
-    host: bankwiz-db-postgresql.bankwiz-dev.svc.cluster.local
+    host: database-dev-release-postgresql.database-dev.svc.cluster.local
     port: 5432
     name: bankwiz_db
     user: bankwiz_user

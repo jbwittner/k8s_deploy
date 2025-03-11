@@ -16,13 +16,9 @@ spec:
         - name: bankwiz-server-container
           image: bankwiz-server-image
           imagePullPolicy: Always
-          env:
-            - name: BANKWIZ_USER_POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: bankwiz-secret            # Le nom du Secret généré par ton SealedSecret
-                  key: bankwiz_user_postgres_password  # Clé définie dans ton SealedSecret
           envFrom:
+            - secretRef:
+                name: bankwiz-secret
             - configMapRef:
                 name: bankwiz-config
           resources:

@@ -4,6 +4,7 @@ namespace: bankwiz-dev
 resources:
 - ../common
 - sealed-secret.yaml
+- namaspace.yaml
 images:
 - name: bankwiz-server-image
   newName: ghcr.io/jbwittner/bankwiz_server

@@ -1,8 +1,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: database-dev-release
-  namespace: database-dev
+  name: database-release
+  namespace: database
 spec:
   interval: 1m
   chart:
@@ -11,13 +11,13 @@ spec:
       version: 16.4.16
       sourceRef:
         kind: HelmRepository
-        name: database-dev-repository
-        namespace: database-dev
+        name: database-repository
+        namespace: database
   values:
     global:
       defaultStorageClass: longhorn-static-retain
       postgresql:
         auth:
-          existingSecret: database-dev-secret
+          existingSecret: database-secret
           secretKeys:
             adminPasswordKey: admin_postgres_password

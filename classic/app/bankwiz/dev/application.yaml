@@ -3,7 +3,7 @@ application:
     host: database-release-postgresql.database.svc.cluster.local
     port: 5432
     name: bankwiz_db_dev
-    user: bankwiz_user
+    user: bankwiz_user_dev
     password: ${BANKWIZ_USER_POSTGRES_PASSWORD}
   oauth2:
     issuer-uri: https://bankwiz-development.eu.auth0.com/

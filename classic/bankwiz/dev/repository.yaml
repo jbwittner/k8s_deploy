@@ -1,0 +1,8 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: podinfo
+  namespace: bankwiz-dev
+spec:
+  image: ghcr.io/jbwittner/bankwiz_server
+  interval: 5m

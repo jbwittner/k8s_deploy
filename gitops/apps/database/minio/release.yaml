@@ -21,3 +21,7 @@ spec:
       existingSecret: database-minio-secret
       rootUserSecretKey: minio_admin_name
       rootPasswordSecretKey: minio_admin_password
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      hostname: minio-console.bytedragon.tech

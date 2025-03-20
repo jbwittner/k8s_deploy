@@ -113,7 +113,7 @@ spec:
   dependsOn:
     - name: infra-sealed-secrets
   interval: 1m0s
-  path: ./gitops/apps/database
+  path: ./gitops/apps/postgres/database
   prune: true
   sourceRef:
     kind: GitRepository

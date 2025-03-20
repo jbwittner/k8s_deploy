@@ -14,10 +14,10 @@ spec:
         name: database-minio-repository
         namespace: database
   values:
-    replicas: 1
+    replicas: 2
     persistence:
       storageClass: longhorn-static-retain
-      size: 20Gi
+      size: 10Gi
     users:
       - accessKey: console
         existingSecret: database-minio-secret

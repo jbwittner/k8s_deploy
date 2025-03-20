@@ -112,6 +112,7 @@ metadata:
 spec:
   dependsOn:
     - name: infra-sealed-secrets
+    - name: infra-longhorn
   interval: 1m0s
   path: ./gitops/apps/database/postgres
   prune: true
@@ -127,6 +128,7 @@ metadata:
 spec:
   dependsOn:
     - name: infra-sealed-secrets
+    - name: infra-longhorn
   interval: 1m0s
   path: ./gitops/apps/database/minio
   prune: true

@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: database-repository
+  name: database-postgres-repository
   namespace: database
 spec:
   type: "oci"

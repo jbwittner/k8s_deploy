@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: database-minio-pvc  # Nom du PVC qui sera utilisé par PostgreSQL
+  namespace: database
+spec:
+  accessModes:
+    - ReadWriteOnce  # Assurez-vous que c'est compatible avec le PV
+  resources:
+    requests:
+      storage: 20Gi  # La taille doit correspondre à celle du PV
+  storageClassName: longhorn-static-retain  # Doit être vide si votre PV est sans StorageClass

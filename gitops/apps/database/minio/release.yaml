@@ -20,4 +20,4 @@ spec:
       - accessKey: console
         existingSecret: database-minio-secret
         existingSecretKey: minio_console_password
-        policy: readonly
+        policy: consoleAdmin

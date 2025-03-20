@@ -14,10 +14,8 @@ spec:
         name: database-postgres-repository
         namespace: database
   values:
-    primary:
-      persistence:
-        existingClaim: database-postgres-pvc
     global:
+      defaultStorageClass: longhorn-static-retain
       postgresql:
         auth:
           existingSecret: database-postgres-secret

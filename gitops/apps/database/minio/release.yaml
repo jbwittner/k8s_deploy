@@ -15,7 +15,8 @@ spec:
         namespace: database
   values:
     persistence:
-      existingClaim: database-minio-pvc
+      storageClass: longhorn-static-retain
+      size: 20Gi
     users:
       - accessKey: console
         existingSecret: database-minio-secret

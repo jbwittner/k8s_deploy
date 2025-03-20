@@ -17,7 +17,7 @@ spec:
     persistence:
       existingClaim: database-minio-pvc
     users:
-      - name: minio
+      - accessKey: console
         existingSecret: database-minio-secret
         existingSecretKey: minio_console_password
         policy: readonly

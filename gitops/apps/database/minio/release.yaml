@@ -8,18 +8,16 @@ spec:
   chart:
     spec:
       chart: minio # Nom du chart
-      version: 5.4.0
+      version: 15.0.7
       sourceRef:
         kind: HelmRepository
         name: database-minio-repository
         namespace: database
   values:
-    replicas: 2
     persistence:
       storageClass: longhorn-static-retain
-      size: 10Gi
-    users:
-      - accessKey: console
-        existingSecret: database-minio-secret
-        existingSecretKey: minio_console_password
-        policy: consoleAdmin
+      size: 8Gi
+    auth:
+      existingSecret: database-minio-secret
+      rootUserSecretKey: minio_admin_name
+      rootPasswordSecretKey: minio_admin_password

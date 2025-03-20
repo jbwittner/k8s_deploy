@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: database
 resources:
   - namespace.yaml
+  - pvc.yaml
   - sealed-secret.yaml
   - repository.yaml
   - release.yaml

@@ -16,7 +16,8 @@ spec:
   values:
     global:
       defaultStorageClass: longhorn-static-retain
-      existingClaim: pvc-a5051779-3f32-46b6-acc9-b22c2273688e
+      persistence:
+        existingClaim: pvc-a5051779-3f32-46b6-acc9-b22c2273688e
       postgresql:
         auth:
           existingSecret: database-secret

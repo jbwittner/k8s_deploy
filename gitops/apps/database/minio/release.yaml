@@ -14,7 +14,7 @@ spec:
         name: database-minio-repository
         namespace: database
   values:
-    replicas: 3
+    replicas: 2
     persistence:
       storageClass: longhorn-static-retain
       size: 20Gi

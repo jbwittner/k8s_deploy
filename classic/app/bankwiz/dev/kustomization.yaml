@@ -4,6 +4,7 @@ namespace: bankwiz-dev
 resources:
 - sealed-secret.yaml
 - namespace.yaml
+- service-account.yaml
 - ../common
 images:
 - name: bankwiz-server-image

@@ -1,3 +1,4 @@
 .env.dev.secret
 secret.yaml
 cert.pem
+*.kubeconfig

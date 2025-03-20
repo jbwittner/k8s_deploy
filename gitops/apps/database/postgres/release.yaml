@@ -14,11 +14,11 @@ spec:
         name: database-postgres-repository
         namespace: database
   values:
+    primary:
+      persistence:
+        existingClaim: pvc-a5051779-3f32-46b6-acc9-b22c2273688e
     global:
       defaultStorageClass: longhorn-static-retain
-      primary:
-        persistence:
-          existingClaim: pvc-a5051779-3f32-46b6-acc9-b22c2273688e
       postgresql:
         auth:
           existingSecret: database-postgres-secret

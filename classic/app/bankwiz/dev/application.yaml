@@ -1,4 +1,6 @@
 application:
+  general:
+    url: https://api-bankwiz-dev.bytedragon.tech
   db:
     host: database-postgres-release-postgresql.database.svc.cluster.local
     port: 5432

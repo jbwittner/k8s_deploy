@@ -7,6 +7,7 @@ application:
     password: ${BANKWIZ_USER_POSTGRES_PASSWORD}
   oauth2:
     issuer-uri: https://bankwiz-development.eu.auth0.com/
+    audience: bankwiz_server
 spring:
   jpa:
     hibernate:

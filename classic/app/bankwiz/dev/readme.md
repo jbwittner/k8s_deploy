@@ -43,5 +43,9 @@ EOF
 pour tester la configuration :
 
 ```bash
-KUBECONFIG=deployment-updater.kubeconfig kubectl set image deployment/bankwiz-deployment bankwiz-server-container=ghcr.io/jbwittner/bankwiz_server:SHA-IMG -n bankwiz-dev
+KUBECONFIG=deployment-updater.kubeconfig kubectl set image deployment/bankwiz-deployment bankwiz-server-container=ghcr.io/jbwittner/bankwiz_server:TAG-IMG -n bankwiz-dev
+```
+
+```bash
+KUBECONFIG=deployment-updater.kubeconfig kubectl set image deployment/bankwiz-deployment bankwiz-server-container=ghcr.io/jbwittner/bankwiz_server:develop-500bbf45ab3bca2559c19c434c9f757880737df2 -n bankwiz-dev
 ```

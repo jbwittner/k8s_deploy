@@ -47,5 +47,5 @@ KUBECONFIG=deployment-updater.kubeconfig kubectl set image deployment/bankwiz-de
 ```
 
 ```bash
-KUBECONFIG=deployment-updater.kubeconfig kubectl set image deployment/bankwiz-deployment bankwiz-server-container=ghcr.io/jbwittner/bankwiz_server:develop-500bbf45ab3bca2559c19c434c9f757880737df2 -n bankwiz-dev
+KUBECONFIG=deployment-updater.kubeconfig kubectl set image deployment/bankwiz-deployment bankwiz-server-container=ghcr.io/jbwittner/bankwiz_server:develop-f1057e4ee24d80137154dad076b312437410dc39 -n bankwiz-dev
 ```

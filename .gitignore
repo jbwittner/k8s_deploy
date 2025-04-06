@@ -2,3 +2,4 @@
 secret.yaml
 cert.pem
 *.kubeconfig
+sealed-secret-key.yaml

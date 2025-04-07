@@ -16,8 +16,8 @@ spec:
   values:
     resources:
       requests:
-        cpu: 30m
-        memory: 150Mi
+        cpu: 3m
+        memory: 100Mi
     config:
       bookmarks:
         - Gestion:

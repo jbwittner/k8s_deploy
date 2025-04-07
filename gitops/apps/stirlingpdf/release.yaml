@@ -23,5 +23,5 @@ spec:
           path: /
     resources:
       requests:
-        cpu: 10m
-        memory: 300Mi  # Augmenté pour éviter les OOM
+        cpu: 5m
+        memory: 400Mi  # Augmenté pour éviter les OOM

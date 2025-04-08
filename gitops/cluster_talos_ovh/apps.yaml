@@ -14,96 +14,96 @@
 #    kind: GitRepository
 #    name: flux-system
 #---
-#apiVersion: kustomize.toolkit.fluxcd.io/v1
-#kind: Kustomization
-#metadata:
-#  name: apps-stirlingpdf
-#  namespace: flux-system
-#spec:
-#  dependsOn:
-#    - name: infra-ingress-nginx
-#  interval: 1m0s
-#  path: ./gitops/apps/stirlingpdf
-#  prune: true
-#  sourceRef:
-#    kind: GitRepository
-#    name: flux-system
-#---
-#apiVersion: kustomize.toolkit.fluxcd.io/v1
-#kind: Kustomization
-#metadata:
-#  name: apps-privatebin
-#  namespace: flux-system
-#spec:
-#  dependsOn:
-#    - name: infra-ingress-nginx
-#  interval: 1m0s
-#  path: ./gitops/apps/privatebin
-#  prune: true
-#  sourceRef:
-#    kind: GitRepository
-#    name: flux-system
-#---
-#apiVersion: kustomize.toolkit.fluxcd.io/v1
-#kind: Kustomization
-#metadata:
-#  name: apps-it-tools
-#  namespace: flux-system
-#spec:
-#  dependsOn:
-#    - name: infra-ingress-nginx
-#  interval: 1m0s
-#  path: ./gitops/apps/it-tools
-#  prune: true
-#  sourceRef:
-#    kind: GitRepository
-#    name: flux-system
-#---
-#apiVersion: kustomize.toolkit.fluxcd.io/v1
-#kind: Kustomization
-#metadata:
-#  name: apps-gethomepage
-#  namespace: flux-system
-#spec:
-#  dependsOn:
-#    - name: infra-ingress-nginx
-#  interval: 1m0s
-#  path: ./gitops/apps/gethomepage
-#  prune: true
-#  sourceRef:
-#    kind: GitRepository
-#    name: flux-system
-#---
-#apiVersion: kustomize.toolkit.fluxcd.io/v1
-#kind: Kustomization
-#metadata:
-#  name: apps-excalidraw
-#  namespace: flux-system
-#spec:
-#  dependsOn:
-#    - name: infra-ingress-nginx
-#  interval: 1m0s
-#  path: ./gitops/apps/excalidraw
-#  prune: true
-#  sourceRef:
-#    kind: GitRepository
-#    name: flux-system
-#---
-#apiVersion: kustomize.toolkit.fluxcd.io/v1
-#kind: Kustomization
-#metadata:
-#  name: apps-draw-io
-#  namespace: flux-system
-#spec:
-#  dependsOn:
-#    - name: infra-ingress-nginx
-#  interval: 1m0s
-#  path: ./gitops/apps/draw-io
-#  prune: true
-#  sourceRef:
-#    kind: GitRepository
-#    name: flux-system
-#---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-stirlingpdf
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-ingress-nginx
+  interval: 1m0s
+  path: ./gitops/apps/stirlingpdf
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-privatebin
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-ingress-nginx
+  interval: 1m0s
+  path: ./gitops/apps/privatebin
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-it-tools
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-ingress-nginx
+  interval: 1m0s
+  path: ./gitops/apps/it-tools
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-gethomepage
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-ingress-nginx
+  interval: 1m0s
+  path: ./gitops/apps/gethomepage
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-excalidraw
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-ingress-nginx
+  interval: 1m0s
+  path: ./gitops/apps/excalidraw
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-draw-io
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-ingress-nginx
+  interval: 1m0s
+  path: ./gitops/apps/draw-io
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
 #apiVersion: kustomize.toolkit.fluxcd.io/v1
 #kind: Kustomization
 #metadata:

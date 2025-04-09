@@ -16,8 +16,7 @@ spec:
   values:
     replicaCount: 1
     nodeSelector:
-    - matchLabels:
-        kubernetes.io/hostname: talos-j4u-099
+      kubernetes.io/hostname: talos-j4u-099
     ingress:
       enabled: true
       ingressClassName: nginx

@@ -1,7 +1,7 @@
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
-  name: l2advertisement
+  name: l2advertisement-1
   namespace: metallb-system
 spec:
   ipAddressPools:
@@ -17,7 +17,7 @@ spec:
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
-  name: l2advertisement
+  name: l2advertisement-2
   namespace: metallb-system
 spec:
   ipAddressPools:
@@ -29,7 +29,7 @@ spec:
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
-  name: l2advertisement
+  name: l2advertisement-3
   namespace: metallb-system
 spec:
   ipAddressPools:

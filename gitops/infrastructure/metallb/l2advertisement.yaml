@@ -5,14 +5,10 @@ metadata:
   namespace: metallb-system
 spec:
   ipAddressPools:
-  - pool-1
+  - pool-8
   nodeSelectors:
   - matchLabels:
-      kubernetes.io/hostname: talos-7jy-tt9
-  - matchLabels:
-      kubernetes.io/hostname: talos-c0a-lnx
-  - matchLabels:
-      kubernetes.io/hostname: talos-uno-0ia
+      kubernetes.io/hostname: talos-p1t-q85
 ---
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
@@ -21,10 +17,10 @@ metadata:
   namespace: metallb-system
 spec:
   ipAddressPools:
-  - pool-2
+  - pool-9
   nodeSelectors:
   - matchLabels:
-      kubernetes.io/hostname: talos-j4u-099
+      kubernetes.io/hostname: talos-8h1-qua
 ---
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
@@ -33,7 +29,7 @@ metadata:
   namespace: metallb-system
 spec:
   ipAddressPools:
-  - pool-3
+  - pool-10
   nodeSelectors:
   - matchLabels:
-      kubernetes.io/hostname: talos-tm0-ec6
+      kubernetes.io/hostname: talos-3ic-tuk

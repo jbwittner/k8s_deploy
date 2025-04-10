@@ -17,6 +17,6 @@ spec:
     watchIngressWithoutClass: true # Permet de regarder les ingress sans classe
     ingressClassResource:
       default: true
-    services:
+    controller:
       annotations:
         metallb.universe.tf/ip-allocated-from-pool: pool-9

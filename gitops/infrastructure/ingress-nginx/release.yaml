@@ -18,5 +18,5 @@ spec:
     ingressClassResource:
       default: true
     controller:
-      annotations:
-        metallb.universe.tf/address-pool: pool-8
+      services:
+        metallb.universe.tf/ip-allocated-from-pool: pool-8

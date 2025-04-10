@@ -15,8 +15,6 @@ spec:
         namespace: stirlingpdf
   values:
     replicaCount: 1
-    nodeSelector:
-      kubernetes.io/hostname: talos-j4u-099
     ingress:
       enabled: true
       ingressClassName: nginx

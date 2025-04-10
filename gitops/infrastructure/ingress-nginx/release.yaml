@@ -20,7 +20,6 @@ spec:
     controller:
       annotations:
         metallb.universe.tf/ip-allocated-from-pool: pool-8
-    controller:
       service:
         annotations:
           metallb.universe.tf/ip-allocated-from-pool: pool-8

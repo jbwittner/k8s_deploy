@@ -17,7 +17,6 @@ spec:
     app:
       ingress:
         enabled: true
-        useDefaultIngressClass: true
         hosts: 
           - kube-dashboard.bytedragon.tech
         tls:

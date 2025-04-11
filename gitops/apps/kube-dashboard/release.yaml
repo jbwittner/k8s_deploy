@@ -7,7 +7,7 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: dashboard # Nom du chart
+      chart: kubernetes-dashboard # Nom du chart
       version: 7.11.1
       sourceRef:
         kind: HelmRepository

@@ -22,3 +22,5 @@ spec:
           - kube-dashboard.bytedragon.tech
         tls:
           enabled: false
+    nginx:
+      enabled: false

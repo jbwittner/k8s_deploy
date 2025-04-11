@@ -21,9 +21,6 @@ spec:
         hosts: 
           - kube-dashboard.bytedragon.tech
         tls:
-          enabled: false
+          enabled: true
     nginx:
       enabled: false
-    kong:
-      ingressController:
-        enabled: true

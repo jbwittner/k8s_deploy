@@ -14,19 +14,3 @@ spec:
         name: kube-dashboard-repository
         namespace: kube-dashboard
   values:
-    app:
-      ingress:
-        enabled: true
-        ingressClassName: nginx
-        hosts: 
-          - kube-dashboard.bytedragon.tech
-        tls:
-          enabled: false
-    nginx:
-      enabled: false
-    kong:
-      ingressController:
-        enabled: true
-      proxy:
-        http:
-          enabled: true

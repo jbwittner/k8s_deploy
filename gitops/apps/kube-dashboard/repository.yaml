@@ -5,4 +5,4 @@ metadata:
   namespace: kube-dashboard
 spec:
   interval: 1m
-  url: https://kubernetes.github.io/
+  url: https://kubernetes.github.io/dashboard

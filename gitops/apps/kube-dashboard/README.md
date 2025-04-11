@@ -1,29 +1,11 @@
 # Monitoring
 
-## Grafana
-
-https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
-
-```bash
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```shell
+kubectl -n kube-dashboard port-forward svc/kube-dashboard-release-kong-proxy 8443:443
 ```
 
-```bash
-helm upgrade --install --namespace monitoring dashboard prometheus-community/kube-prometheus-stack -f dashboard.yaml --create-namespace
-```
+Il faut ajouter un user pour accéder au dashboard. => https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
 
-```bash
-helm uninstall dashboard
-```
-
-## Quickwit
-
-https://github.com/quickwit-oss/helm-charts/tree/main/charts/quickwit
-
-```bash
-helm repo add quickwit https://helm.quickwit.io
-```
-
-```bash
-helm upgrade --install --namespace monitoring search quickwit/quickwit -f search.yaml --create-namespace
+```shell
+kubectl -n kube-dashboard create token admin-user
 ```

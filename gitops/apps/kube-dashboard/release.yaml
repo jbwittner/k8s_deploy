@@ -24,3 +24,7 @@ spec:
           enabled: false
     nginx:
       enabled: false
+    kong:
+      proxy:
+        http:
+          enabled: true

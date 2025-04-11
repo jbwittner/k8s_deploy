@@ -25,6 +25,5 @@ spec:
     nginx:
       enabled: false
     kong:
-      proxy:
-        http:
-          enabled: true
+      ingressController:
+        enabled: true

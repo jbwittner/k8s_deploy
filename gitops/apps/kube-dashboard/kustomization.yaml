@@ -3,6 +3,5 @@ kind: Kustomization
 namespace: kube-dashboard
 resources:
   - namespace.yaml
-  - sealed-secret.yaml
   - repository.yaml
   - release.yaml

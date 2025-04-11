@@ -17,6 +17,6 @@ spec:
     app:
       ingress:
         enabled: true
-        ingressClassName: nginx
+        useDefaultIngressClass: true
         hosts: 
           - kube-dashboard.bytedragon.tech

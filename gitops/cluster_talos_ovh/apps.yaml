@@ -104,38 +104,38 @@ spec:
     kind: GitRepository
     name: flux-system
 ---
-#apiVersion: kustomize.toolkit.fluxcd.io/v1
-#kind: Kustomization
-#metadata:
-#  name: apps-datbase-postgres
-#  namespace: flux-system
-#spec:
-#  dependsOn:
-#    - name: infra-sealed-secrets
-#    - name: infra-longhorn
-#  interval: 1m0s
-#  path: ./gitops/apps/database/postgres
-#  prune: true
-#  sourceRef:
-#    kind: GitRepository
-#    name: flux-system
-#---
-#apiVersion: kustomize.toolkit.fluxcd.io/v1
-#kind: Kustomization
-#metadata:
-#  name: apps-datbase-minio
-#  namespace: flux-system
-#spec:
-#  dependsOn:
-#    - name: infra-sealed-secrets
-#    - name: infra-longhorn
-#  interval: 1m0s
-#  path: ./gitops/apps/database/minio
-#  prune: true
-#  sourceRef:
-#    kind: GitRepository
-#    name: flux-system
-#---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-datbase-postgres
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-sealed-secrets
+    - name: infra-longhorn
+  interval: 1m0s
+  path: ./gitops/apps/database/postgres
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-datbase-minio
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-sealed-secrets
+    - name: infra-longhorn
+  interval: 1m0s
+  path: ./gitops/apps/database/minio
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:

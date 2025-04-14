@@ -3,7 +3,7 @@
 Il faut en premier lancer le kustomize :
 
 ```bash
-kubectl apply -f -
+kubectl apply -k dev
 ```
 
 Il faut attendre quelques secondes pui récupérer le token :

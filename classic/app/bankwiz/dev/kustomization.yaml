@@ -9,7 +9,7 @@ resources:
 images:
 - name: bankwiz-server-image
   newName: ghcr.io/jbwittner/bankwiz_server
-  newTag: develop-2139622ac65868f7876f7c01cd0bd4d1c7f1cb78
+  newTag: develop-f5f974b6c4702e2a644251644e39e06b7255b9b1
 configMapGenerator:
 - name: bankwiz-server-additional-config
   files:

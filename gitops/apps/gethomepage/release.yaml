@@ -23,42 +23,42 @@ spec:
         - Gestion:
             - Ticktick:
                 - abbr: TT
-                  href: https://ticktick.com/
+                  href: https://ticktick.com
         - Developer:
             - Github:
                 - abbr: GH
-                  href: https://github.com/
+                  href: https://github.com
             - Une tasse de café:
                 - abbr: UTC
-                  href: https://une-tasse-de.cafe/
+                  href: https://une-tasse-de.cafe
             - Cloudflare:
                 - abbr: CF
-                  href: https://dash.cloudflare.com/
+                  href: https://dash.cloudflare.com
             - Ovh:
                 - abbr: OVH
                   href: https://www.ovhcloud.com
         - IA:
             - ChatGPT:
                 - abbr: CGPT
-                  href: https://chat.openai.com/
+                  href: https://chat.openai.com
+            - Gemini:
+                - abbr: GEM
+                  href: https://gemini.google.com
             - Github Copilot:
                 - abbr: GC
-                  href: https://copilot.github.com/
+                  href: https://copilot.github.com
             - Perplexity:
                 - abbr: PP
-                  href: https://www.perplexity.ai/
-            - Mistral:
-                - abbr: M
-                  href: https://chat.mistral.ai/
+                  href: https://www.perplexity.ai
       services:
         - Monitoring:
             - Grafana:
                 icon: grafana.png
                 href: https://grafana.bytedragon.tech/
                 description: Grafana
-        - Docs:
-            - Docusaurus:
-                icon: docusaurus.png
+        - Blog:
+            - LaBoussole:
+                icon: cloudflare-pages.png
                 href: https://blog.bytedragon.tech/
                 description: Docusaurus
         - Tools:

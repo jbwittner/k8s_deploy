@@ -4,6 +4,8 @@ https://gethomepage.dev/
 
 https://github.com/jameswynn/helm-charts
 
+https://github.com/homarr-labs/dashboard-icons
+
 ```bash
 helm repo add jameswynn https://jameswynn.github.io/helm-charts
 ```

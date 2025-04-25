@@ -60,7 +60,7 @@ spec:
             - LaBoussole:
                 icon: cloudflare-pages.png
                 href: https://blog.bytedragon.tech/
-                description: Docusaurus
+                description: Mon blog personnel
         - Tools:
             - Draw.io:
                 icon: draw-io.png

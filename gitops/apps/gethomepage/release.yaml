@@ -59,7 +59,7 @@ spec:
         - Blog:
             - LaBoussole:
                 icon: cloudflare-pages.png
-                href: https://blog.bytedragon.tech/
+                href: https://laboussole.dev/
                 description: Mon blog personnel
         - Tools:
             - Draw.io:

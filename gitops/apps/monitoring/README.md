@@ -9,7 +9,7 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 ```
 
 ```bash
-helm upgrade --install --namespace monitoring dashboard prometheus-community/kube-prometheus-stack -f dashboard.yaml --create-namespace
+helm upgrade --install --namespace monitoring dashboard prometheus-community/kube-prometheus-stack --create-namespace
 ```
 
 ```bash

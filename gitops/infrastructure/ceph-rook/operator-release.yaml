@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: rook-ceph-operator-release
+  namespace: rook-ceph
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: rook-ceph # Nom du chart
+      version: 0.0.1  # Version du chart
+      sourceRef:
+        kind: HelmRepository
+        name: rook-ceph-repository
+        namespace: rook-ceph

@@ -36,3 +36,13 @@ flux bootstrap github \
 
 -> [Bankwiz](./bankwiz/README.md) <-
 -> [Ingress Nginx](./nginx/README.md) <-
+
+## Commandes utiles
+
+```bash
+flux get all
+```
+
+```bash
+watch flux get all
+```

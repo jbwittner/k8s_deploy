@@ -4,11 +4,11 @@ metadata:
   name: rook-ceph-operator-release
   namespace: rook-ceph
 spec:
-  interval: 10m
+  interval: 1m
   chart:
     spec:
       chart: rook-ceph # Nom du chart
-      version: 0.0.1  # Version du chart
+      version: 4.12.3  # Version du chart
       sourceRef:
         kind: HelmRepository
         name: rook-ceph-repository

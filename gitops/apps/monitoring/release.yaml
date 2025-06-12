@@ -15,7 +15,7 @@ spec:
         namespace: monitoring
   values:
     grafana:
-      metadata:
+      operator:
         annotations:
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
           external-dns.alpha.kubernetes.io/hostname: grafana.bytedragon.tech

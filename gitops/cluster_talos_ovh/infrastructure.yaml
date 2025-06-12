@@ -18,7 +18,7 @@ metadata:
   name: infra-sealed-secrets
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 1m0s
   path: ./gitops/infrastructure/sealed-secrets
   prune: true
   sourceRef:

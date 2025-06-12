@@ -43,7 +43,7 @@ spec:
   chart:
     spec:
       chart: external-dns # Nom du chart
-      version: 0.17.0  # Version du chart
+      version: 1.16.1  # Version du chart
       sourceRef:
         kind: HelmRepository
         name: kubernetes-sigs-repository

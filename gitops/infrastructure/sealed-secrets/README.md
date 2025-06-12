@@ -5,3 +5,10 @@ Le fichier généré pourra être importé dans un cluster via la commande kubec
 ```
 kubectl apply -n kube-system -f sealed-secret-key.yaml
 ```
+
+
+Pour générer un secret scellé, il faut d'abord créer un secret Kubernetes normal, puis le convertir en secret scellé avec la commande suivante :
+
+```bash
+cat secret.yaml | kubeseal --controller-namespace sealed-secrets --controller-name sealed-secrets --format yaml > sealed-secret.yaml
+```

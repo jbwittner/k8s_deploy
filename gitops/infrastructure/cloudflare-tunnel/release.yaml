@@ -29,4 +29,4 @@ spec:
       requests:
         cpu: "100m"
         memory: "128Mi"
-    replicaCount: 3
+    replicaCount: 1

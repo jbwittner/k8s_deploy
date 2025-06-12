@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: metrics-server-release
+  namespace: metrics-server
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: metrics-server # Nom du chart
+      version: 0.7.2  # Version du chart
+      sourceRef:
+        kind: HelmRepository
+        name: metrics-server-repository
+        namespace: metrics-server

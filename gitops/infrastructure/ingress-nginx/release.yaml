@@ -15,3 +15,8 @@ spec:
         namespace: ingress-nginx
   values:
     watchIngressWithoutClass: true # Permet de regarder les ingress sans classe
+    controller:
+      service:
+        type: ClusterIP # Type de service
+      ingressClassResource:
+        default: true

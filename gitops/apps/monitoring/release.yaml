@@ -15,13 +15,12 @@ spec:
         namespace: monitoring
   values:
     grafana:
-      operator:
+      ingress:
+        enabled: true
         annotations:
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
           external-dns.alpha.kubernetes.io/hostname: grafana.bytedragon.tech
           external-dns.alpha.kubernetes.io/target: e2ce076e-6567-4837-ba6b-fc9a6de53032.com
-      ingress:
-        enabled: true
         hosts: 
           - grafana.bytedragon.tech
       admin:

@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: metrics-server # Nom du chart
-      version: 0.7.2  # Version du chart
+      version: 3.12.2  # Version du chart
       sourceRef:
         kind: HelmRepository
         name: metrics-server-repository

@@ -4,3 +4,5 @@ namespace: cloudflare
 resources:
   - namespace.yaml
   - sealed-secret.yaml
+  - repository.yaml
+  - release.yaml

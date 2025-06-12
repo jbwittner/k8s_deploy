@@ -16,7 +16,7 @@ spec:
   values:
     tunnelName: "kubernetes-bytedragon-tech"
     tunnelId: "e2ce076e-6567-4837-ba6b-fc9a6de53032"
-    secretName: "cloudflare-tunnel-credentials"
+    secretName: cloudflare-tunnel-credentials
     ingress:
       - hostname: "*.bytedragon.tech"
         service: "https://ingress-nginx-release-controller.ingress-nginx.svc.cluster.local:443"

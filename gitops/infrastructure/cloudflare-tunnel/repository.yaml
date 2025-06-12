@@ -1,3 +1,4 @@
+---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
@@ -6,3 +7,12 @@ metadata:
 spec:
   interval: 1m
   url: https://cloudflare.github.io/helm-charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: kubernetes-sigs-repository
+  namespace: cloudflare
+spec:
+  interval: 1m
+  url: https://kubernetes-sigs.github.io/external-dns

@@ -47,7 +47,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: kubernetes-sigs-repository
-        namespace: cloudflare
+        namespace: cloudflare-bytedragon-tech
   values:
     env:
     - name: CF_API_TOKEN

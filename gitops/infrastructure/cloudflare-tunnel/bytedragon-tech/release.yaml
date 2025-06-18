@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: cloudflare-release
-  namespace: cloudflare
+  namespace: cloudflare-bytedragon-tech
 spec:
   interval: 1m
   chart:
@@ -37,7 +37,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: kubernetes-sigs-release
-  namespace: cloudflare
+  namespace: cloudflare-bytedragon-tech
 spec:
   interval: 1m
   chart:

@@ -5,3 +5,4 @@ resources:
   - namespace.yaml
   - sealed-secret.yaml
   - provider.yaml
+  - alerts.yaml

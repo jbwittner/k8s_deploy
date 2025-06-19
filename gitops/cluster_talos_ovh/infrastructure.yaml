@@ -44,6 +44,8 @@ metadata:
   name: infra-cloudflare-tunnel-wittnerlab-com
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: infra-ingress-nginx
   interval: 1m0s
   path: ./gitops/infrastructure/cloudflare-tunnel/wittnerlab-com
   prune: true

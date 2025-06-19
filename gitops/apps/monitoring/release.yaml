@@ -27,3 +27,12 @@ spec:
         existingSecret: monitoring-secret
         userKey: admin_login
         passwordKey: admin_password
+    prometheus:
+  prometheusSpec:    
+    storageSpec: 
+     volumeClaimTemplate:
+       spec:
+         accessModes: ["ReadWriteOnce"]
+         resources:
+           requests:
+             storage: 50Gi

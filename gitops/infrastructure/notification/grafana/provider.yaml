@@ -1,0 +1,11 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: grafana-provider
+  namespace: flux-notification-grafana
+spec:
+  type: grafana
+  address: https://grafana.wittnerla.com/api/annotations
+  secretRef:
+    name: grafana-token
+

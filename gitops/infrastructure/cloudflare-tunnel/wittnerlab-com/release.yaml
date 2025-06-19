@@ -20,7 +20,7 @@ spec:
       tunnelId: a43b34e6-c752-44d1-99a5-cefa29a1fe53
       secretName: cloudflare-tunnel-credentials
       ingress:
-        - hostname: "*.wittenrlab.com"
+        - hostname: "*.wittnerlab.com"
           service: "https://ingress-nginx-release-controller.ingress-nginx.svc.cluster.local:443"
           originRequest:
             noTLSVerify: true

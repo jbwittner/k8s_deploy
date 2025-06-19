@@ -12,3 +12,7 @@ Pour générer un secret scellé, il faut d'abord créer un secret Kubernetes no
 ```bash
 cat secret.yaml | kubeseal --controller-namespace sealed-secrets --controller-name sealed-secrets-release --format yaml > sealed-secret.yaml
 ```
+
+```bash
+echo -n 'mega_secret_key' | openssl base64
+```

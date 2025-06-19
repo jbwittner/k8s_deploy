@@ -41,13 +41,11 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra-cloudflare-tunnel
+  name: infra-cloudflare-tunnel-wittnerlab-com
   namespace: flux-system
 spec:
   interval: 1m0s
-  dependsOn:
-    - name: infra-ingress-nginx
-  path: ./gitops/infrastructure/cloudflare-tunnel
+  path: ./gitops/infrastructure/cloudflare-tunnel/wittnerlab-com
   prune: true
   sourceRef:
     kind: GitRepository

@@ -46,3 +46,9 @@ flux get all
 ```bash
 watch flux get all
 ```
+
+## Utilisation de sealed secrets
+
+```bash
+kubectl create secret generic my-secret
+```

@@ -5,7 +5,7 @@ metadata:
   namespace: flux-notification-grafana
 spec:
   type: grafana
-  address: https://grafana.wittnerlab.com/api/annotations
+  address: http://grafana.monitoring.svc.cluster.local/api/annotations
   secretRef:
     name: grafana-token
 

@@ -28,11 +28,11 @@ spec:
         userKey: admin_login
         passwordKey: admin_password
     prometheus:
-  prometheusSpec:    
-    storageSpec: 
-     volumeClaimTemplate:
-       spec:
-         accessModes: ["ReadWriteOnce"]
-         resources:
-           requests:
-             storage: 10Gi
+      prometheusSpec:    
+        storageSpec: 
+        volumeClaimTemplate:
+          spec:
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 10Gi

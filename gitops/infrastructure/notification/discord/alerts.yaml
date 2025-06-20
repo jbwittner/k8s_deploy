@@ -1,8 +1,8 @@
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
-  name: on-call-webapp
-  namespace: flux-notification-discord
+  name: flux-notification-discord
+  namespace: flux-system
 spec:
   summary: "cluster addons"
   eventMetadata:

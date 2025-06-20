@@ -54,7 +54,7 @@ spec:
         - Monitoring:
             - Grafana:
                 icon: grafana.png
-                href: https://grafana.bytedragon.tech/
+                href: https://grafana.wittnerlab.com/
                 description: Grafana
         - Blog:
             - LaBoussole:
@@ -103,9 +103,12 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "nginx"
+        annotations:
+          external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+          external-dns.alpha.kubernetes.io/hostname: homepage.wittnerlab.com
+          external-dns.alpha.kubernetes.io/target: a43b34e6-c752-44d1-99a5-cefa29a1fe53.cfargotunnel.com
         hosts:
-          - host: homepage.bytedragon.tech
+          - host: homepage.wittnerlab.com
             paths:
               - path: /
                 pathType: Prefix

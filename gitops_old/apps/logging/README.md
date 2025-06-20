@@ -1,1 +1,0 @@
-https://quickwit.io/docs/deployment/kubernetes/helm

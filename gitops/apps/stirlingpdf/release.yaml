@@ -17,9 +17,12 @@ spec:
     replicaCount: 1
     ingress:
       enabled: true
-      ingressClassName: nginx
+      annotations:
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+        external-dns.alpha.kubernetes.io/hostname: stirling.wittnerlab.com
+        external-dns.alpha.kubernetes.io/target: a43b34e6-c752-44d1-99a5-cefa29a1fe53.cfargotunnel.com
       hosts:
-        - name: stirling.bytedragon.tech
+        - name: stirling.wittnerlab.com
           path: /
     resources:
       requests:

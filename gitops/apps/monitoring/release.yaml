@@ -23,7 +23,7 @@ spec:
       #  size: 10Gi
       #  finalizers:
       #    - kubernetes.io/pvc-protection
-      defaultDashboardsInterval: 5s
+      defaultDashboardsInterval: 10m
       ingress:
         enabled: true
         annotations:

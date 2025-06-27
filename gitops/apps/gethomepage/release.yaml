@@ -64,23 +64,23 @@ spec:
         - Tools:
             - Draw.io:
                 icon: draw-io.png
-                href: https://drawio.bytedragon.tech/
+                href: https://drawio.wittnerlab.tech/
                 description: Online diagram software
             - Excalidraw:
                 icon: excalidraw.png
-                href: https://excalidraw.bytedragon.tech/
+                href: https://excalidraw.wittnerlab.tech/
                 description: Virtual collaborative whiteboard tool
             - IT Tools:
                 icon: it-tools.png
-                href: https://ittools.bytedragon.tech/
+                href: https://ittools.wittnerlab.tech/
                 description: Handy tools for developers
             - Stirling PDF:
                 icon: mdi-file-pdf-box
-                href: https://stirling.bytedragon.tech/
+                href: https://stirling.wittnerlab.tech/
                 description: PDF manipulation tool
             - PrivateBin :
                 icon: mdi-content-paste
-                href: https://privatebin.bytedragon.tech/
+                href: https://privatebin.wittnerlab.tech/
                 description: Minimalist, open source online pastebin
       widgets:
         - search:

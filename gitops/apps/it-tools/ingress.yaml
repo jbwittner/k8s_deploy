@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: it-tools-ingress
 spec:
-  ingressClassName: nginx
   annotations:
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
     external-dns.alpha.kubernetes.io/hostname: ittools.wittnerlab.com

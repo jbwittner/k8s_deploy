@@ -28,9 +28,6 @@ spec:
             - Github:
                 - abbr: GH
                   href: https://github.com
-            - Une tasse de café:
-                - abbr: UTC
-                  href: https://une-tasse-de.cafe
             - Cloudflare:
                 - abbr: CF
                   href: https://dash.cloudflare.com
@@ -50,18 +47,26 @@ spec:
             - Perplexity:
                 - abbr: PP
                   href: https://www.perplexity.ai
-      services:
-        - Monitoring:
+      services:            
+        - Infrastructure:
             - Grafana:
                 icon: grafana.png
                 href: https://grafana.wittnerlab.com/
                 description: Grafana
+            - Minio Console:
+                icon: mdi-bucket
+                href: https://minio-console.wittnerlab.com/
+                description: Minio Console
         - Blog:
             - LaBoussole:
                 icon: cloudflare-pages.png
                 href: https://laboussole.dev/
                 description: Mon blog personnel
-        - Tools:
+            - Une tasse de café:
+                icon: si-coffeescript
+                href: https://une-tasse-de.cafe
+                description: une-tasse-de.cafe
+        - Création & Design:
             - Draw.io:
                 icon: draw-io.png
                 href: https://drawio.wittnerlab.com/
@@ -70,6 +75,7 @@ spec:
                 icon: excalidraw.png
                 href: https://excalidraw.wittnerlab.com/
                 description: Virtual collaborative whiteboard tool
+        - Utilitaires:
             - IT Tools:
                 icon: it-tools.png
                 href: https://ittools.wittnerlab.com/

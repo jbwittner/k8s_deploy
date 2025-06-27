@@ -121,7 +121,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps-minio
+  name: apps-database-minio
   namespace: flux-system
 spec:
   dependsOn:
@@ -130,6 +130,22 @@ spec:
     - name: infra-ceph-rook
   interval: 1m0s
   path: ./gitops/apps/database/minio
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-database-postgres
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-sealed-secrets
+    - name: infra-ceph-rook
+  interval: 1m0s
+  path: ./gitops/apps/database/postgres
   prune: true
   sourceRef:
     kind: GitRepository

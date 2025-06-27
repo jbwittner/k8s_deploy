@@ -15,9 +15,11 @@ spec:
         namespace: database
   values:
     global:
-      defaultStorageClass: longhorn-static-retain
       postgresql:
         auth:
           existingSecret: database-postgres-secret
           secretKeys:
             adminPasswordKey: admin_postgres_password
+        primary:
+          persistence:
+            size: 10Gi

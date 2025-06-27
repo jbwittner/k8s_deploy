@@ -21,7 +21,7 @@ spec:
         external-dns.alpha.kubernetes.io/hostname: excalidraw.wittnerlab.com
         external-dns.alpha.kubernetes.io/target: a43b34e6-c752-44d1-99a5-cefa29a1fe53.cfargotunnel.com
       hosts:
-        - host: excalidraw.bytedragon.tech
+        - host: excalidraw.wittnerlab.com
           paths:
             - path: /
               pathType: Prefix

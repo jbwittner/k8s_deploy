@@ -170,6 +170,8 @@ metadata:
   name: apps-github-actions-runner
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: apps-github-actions-controller
   interval: 1m0s
   path: ./gitops/apps/github-action/runner-set
   prune: true

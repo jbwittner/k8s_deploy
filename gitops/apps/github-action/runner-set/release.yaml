@@ -21,9 +21,6 @@ spec:
     runnerScaleSetName: talos-runner
     template:
       containers:
-      - name: runner-action
-        image: ghcr.io/actions/actions-runner:latest
-        command: ["/home/runner/run.sh"]
       - name: runner-ubuntu
         image: ghcr.io/actions/ubuntu-24.04
         command: ["/home/runner/run.sh"]

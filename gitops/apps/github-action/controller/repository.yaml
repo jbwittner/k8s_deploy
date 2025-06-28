@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: gha-runner-scale-set-controller-repository
+  name: actions-runner-controller-charts-repository
   namespace: arc-systems
 spec:
   type: "oci"

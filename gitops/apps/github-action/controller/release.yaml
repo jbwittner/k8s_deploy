@@ -11,10 +11,5 @@ spec:
       version: 0.12.1
       sourceRef:
         kind: HelmRepository
-        name: gha-runner-scale-set-controller-repository
+        name: actions-runner-controller-charts-repository
         namespace: arc-systems
-  values:
-    githubConfigUrl: https://github.com/jbwittner/bankwiz_server
-    githubConfigSecret: github-bankwiz-secret
-    minRunners: 5
-    runnerScaleSetName: talos-runner

@@ -1,15 +1,5 @@
-# Draw.io
+# ARC Systems Actions Runner Controller
 
-https://hub.docker.com/r/jgraph/drawio
+https://docs.github.com/en/actions/tutorials/quickstart-for-actions-runner-controller
 
-Il faut créer le namespece `draw-io` pour déployer les outils.
-
-```bash
-kubectl create namespace draw-io
-```
-
-Puis utiliser kustomize pour installer l'application
-
-```bash
-kubectl apply -k .
-```
+https://github.com/actions/actions-runner-controller/blob/master/charts/gha-runner-scale-set-controller/values.yaml

@@ -4,4 +4,5 @@ namespace: arc-systems
 resources:
   - namespace.yaml
   - repository.yaml
+  - sealed-secret.yaml
   - release.yaml

@@ -7,4 +7,4 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name:  arcarc-runners
+  name:  arc-runners

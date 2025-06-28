@@ -16,3 +16,4 @@ spec:
   values:
     githubConfigUrl: https://github.com/jbwittner/bankwiz_server
     githubConfigSecret: github-bankwiz-secret
+    minRunners: 5

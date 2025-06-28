@@ -7,7 +7,7 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: minio # Nom du chart
+      chart: gha-runner-scale-set-controller # Nom du chart
       version: 15.0.7
       sourceRef:
         kind: HelmRepository

@@ -158,7 +158,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./gitops/apps/github-actions/controller
+  path: ./gitops/apps/github-action/controller
   prune: true
   sourceRef:
     kind: GitRepository

@@ -23,5 +23,5 @@ spec:
       spec:
         containers:
         - name: runner
-          image: ghcr.io/jbwittner/action_runner_image:main-f7871ebecae63190f5852384ab80a91368c78c1a
+          image: ghcr.io/jbwittner/action_runner_image:main-67576989a87b40018d62af800c00d38af8aaaf80
           command: ["/home/runner/run.sh"]

@@ -20,7 +20,8 @@ spec:
     maxRunners: 10
     runnerScaleSetName: talos-runner
     template:
-      containers:
-      - name: runner-ubuntu
-        image: ghcr.io/jbwittner/action_runner_image:main-f7871ebecae63190f5852384ab80a91368c78c1a
-        command: ["/home/runner/run.sh"]
+      spec:
+        containers:
+        - name: custom-runner-image
+          image: ghcr.io/jbwittner/action_runner_image:main-f7871ebecae63190f5852384ab80a91368c78c1a
+          command: ["/home/runner/run.sh"]

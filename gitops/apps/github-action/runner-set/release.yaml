@@ -16,11 +16,11 @@ spec:
   values:
     githubConfigUrl: https://github.com/jbwittner/bankwiz_server
     githubConfigSecret: github-bankwiz-secret
-    minRunners: 5
-    maxRunners: 5
+    minRunners: 1
+    maxRunners: 10
     runnerScaleSetName: talos-runner
     template:
       containers:
       - name: runner-ubuntu
-        image: ghcr.io/actions/ubuntu-24.04
+        image: ghcr.io/jbwittner/action_runner_image:main-f7871ebecae63190f5852384ab80a91368c78c1a
         command: ["/home/runner/run.sh"]

@@ -21,6 +21,8 @@ spec:
     runnerScaleSetName: talos-runner
     template:
       spec:
+        securityContext:
+          fsGroup: 123
         containers:
         - name: runner
           image: ghcr.io/jbwittner/action_runner_image:main-2db4c65db09e12141271cf6df348306a2e8a84d6

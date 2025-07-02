@@ -33,7 +33,7 @@ spec:
           ephemeral:
             volumeClaimTemplate:
               spec:
-                accessModes: [ "ReadWriteOnce" ]
+                accessModes: [ "ReadWriteMany" ]
                 resources:
                   requests:
                     storage: 5Gi

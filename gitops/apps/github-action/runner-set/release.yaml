@@ -28,7 +28,7 @@ spec:
           volumeMounts:
           - name: maven-repository
             mountPath: /home/runner/.m2/repository
-        volumeMounts:
+        volumes:
         - name: maven-repository
           ephemeral:
             volumeClaimTemplate:

@@ -25,3 +25,15 @@ spec:
         - name: runner
           image: ghcr.io/jbwittner/action_runner_image:main-2db4c65db09e12141271cf6df348306a2e8a84d6
           command: ["/home/runner/run.sh"]
+          volumeMounts:
+          - name: maven-repository
+            mountPath: /home/runner/.m2/repository
+        volumeMounts:
+        - name: maven-repository
+          ephemeral:
+            volumeClaimTemplate:
+              spec:
+                accessModes: [ "ReadWriteOnce" ]
+                resources:
+                  requests:
+                    storage: 5Gi

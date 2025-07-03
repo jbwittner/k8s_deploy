@@ -34,7 +34,7 @@ spec:
               cpu: "2.0"
               memory: "4Gi"
         - name: docker
-          image: docker:28.3.1-dind-rootless
+          image: summerwind/actions-runner-dind-rootless:v2.316.0-ubuntu-22.04-49490c4
           resources:
             limits:
               cpu: "4.0"

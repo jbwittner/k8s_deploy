@@ -22,15 +22,6 @@ spec:
     dockerdWithinRunnerContainer: true
     template:
       spec:
-        securityContext:
-          fsGroup: 1001
-        initContainers:
-        - name: docker-setup
-          image: busybox:1.35
-          command: ["sh", "-c", "chmod 666 /var/run/docker.sock"]
-          volumeMounts:
-            - name: docker-socket
-              mountPath: /var/run/docker.sock
         containers:
         - name: runner
           image: ghcr.io/jbwittner/action_runner_image:main-e46ae4c26187615dabbc542d129cc490acffdeda

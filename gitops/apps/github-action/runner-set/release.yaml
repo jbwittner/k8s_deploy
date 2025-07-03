@@ -19,25 +19,34 @@ spec:
     minRunners: 1
     maxRunners: 10
     runnerScaleSetName: talos-runner
-    containerMode:
-      type: dind
+    dockerdWithinRunnerContainer: true
     template:
       spec:
         securityContext:
-          fsGroup: 123
+          fsGroup: 1001
+        initContainers:
+        - name: docker-setup
+          image: busybox:1.35
+          command: ["sh", "-c", "chmod 666 /var/run/docker.sock"]
+          volumeMounts:
+            - name: docker-socket
+              mountPath: /var/run/docker.sock
         containers:
         - name: runner
           image: ghcr.io/jbwittner/action_runner_image:main-e46ae4c26187615dabbc542d129cc490acffdeda
           command: ["/home/runner/run.sh"]
-        #   volumeMounts:
-        #   - name: maven-repository
-        #     mountPath: /home/runner/.m2/repository
-        # volumes:
-        # - name: maven-repository
-        #   ephemeral:
-        #     volumeClaimTemplate:
-        #       spec:
-        #         accessModes: [ "ReadWriteOnce" ]
-        #         resources:
-        #           requests:
-        #             storage: 5Gi
+          resources:
+            limits:
+              cpu: "4.0"
+              memory: "8Gi"
+            requests:
+              cpu: "2.0"
+              memory: "4Gi"
+        - name: docker
+          resources:
+            limits:
+              cpu: "4.0"
+              memory: "8Gi"
+            requests:
+              cpu: "2.0"
+              memory: "4Gi"

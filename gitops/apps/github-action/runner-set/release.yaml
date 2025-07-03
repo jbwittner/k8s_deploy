@@ -34,7 +34,7 @@ spec:
               cpu: "2.0"
               memory: "4Gi"
         - name: docker
-          image: ghcr.io/actions/actions-runner:2.325.0
+          image: docker:dind
           resources:
             limits:
               cpu: "4.0"

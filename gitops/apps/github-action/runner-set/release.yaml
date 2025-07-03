@@ -34,7 +34,7 @@ spec:
               cpu: "2.0"
               memory: "4Gi"
         - name: docker
-          image: ghcr.io/actions-runner-controller/actions-runner-controller/actions-runner-dind:v2.325.0-ubuntu-20.04-469a0fa
+          image: ghcr.io/actions-runner-controller/actions-runner-controller/actions-runner-dind-rootless:v2.316.0-ubuntu-20.04-49490c4
           resources:
             limits:
               cpu: "4.0"

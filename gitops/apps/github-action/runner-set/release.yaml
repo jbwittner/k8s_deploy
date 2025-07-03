@@ -25,7 +25,7 @@ spec:
           fsGroup: 123
         containers:
         - name: runner
-          image: ghcr.io/jbwittner/action_runner_image:main-5a240846c87d3b5cb3a541c78914b913881bfe45
+          image: ghcr.io/jbwittner/action_runner_image:main-e46ae4c26187615dabbc542d129cc490acffdeda
           command: ["/home/runner/run.sh"]
         #   volumeMounts:
         #   - name: maven-repository

@@ -25,17 +25,17 @@ spec:
           fsGroup: 123
         containers:
         - name: runner
-          image: ghcr.io/jbwittner/action_runner_image:main-2db4c65db09e12141271cf6df348306a2e8a84d6
+          image: ghcr.io/jbwittner/action_runner_image:main-5a240846c87d3b5cb3a541c78914b913881bfe45
           command: ["/home/runner/run.sh"]
-          volumeMounts:
-          - name: maven-repository
-            mountPath: /home/runner/.m2/repository
-        volumes:
-        - name: maven-repository
-          ephemeral:
-            volumeClaimTemplate:
-              spec:
-                accessModes: [ "ReadWriteOnce" ]
-                resources:
-                  requests:
-                    storage: 5Gi
+        #   volumeMounts:
+        #   - name: maven-repository
+        #     mountPath: /home/runner/.m2/repository
+        # volumes:
+        # - name: maven-repository
+        #   ephemeral:
+        #     volumeClaimTemplate:
+        #       spec:
+        #         accessModes: [ "ReadWriteOnce" ]
+        #         resources:
+        #           requests:
+        #             storage: 5Gi

@@ -19,6 +19,8 @@ spec:
     minRunners: 1
     maxRunners: 10
     runnerScaleSetName: talos-runner
+    containerMode:
+      type: dind
     template:
       spec:
         securityContext:

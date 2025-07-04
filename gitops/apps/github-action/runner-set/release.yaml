@@ -19,22 +19,19 @@ spec:
     minRunners: 1
     maxRunners: 10
     runnerScaleSetName: talos-runner
-    dockerdWithinRunnerContainer: true
+    containerMode:
+      type: "dind"
+      kubernetesModeWorkVolumeClaim:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 2Gi
     template:
       spec:
         containers:
         - name: runner
           image: ghcr.io/jbwittner/action_runner_image:main-e46ae4c26187615dabbc542d129cc490acffdeda
           command: ["/home/runner/run.sh"]
-          resources:
-            limits:
-              cpu: "4.0"
-              memory: "8Gi"
-            requests:
-              cpu: "2.0"
-              memory: "4Gi"
-        - name: docker
-          image: ghcr.io/actions-runner-controller/actions-runner-controller/actions-runner-dind-rootless:v2.316.0-ubuntu-20.04-49490c4
           resources:
             limits:
               cpu: "4.0"

@@ -20,7 +20,13 @@ spec:
     maxRunners: 10
     runnerScaleSetName: talos-runner
     containerMode:
-      type: kubernetes
+      type: "dind"
+      kubernetesModeWorkVolumeClaim:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: "ceph-block"
+        resources:
+          requests:
+            storage: 2Gi
     template:
       spec:
         containers:

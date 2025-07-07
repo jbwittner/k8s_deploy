@@ -16,7 +16,7 @@ spec:
   values:
     githubConfigUrl: https://github.com/jbwittner/bankwiz_server
     githubConfigSecret: github-bankwiz-secret
-    minRunners: 1
+    minRunners: 0
     maxRunners: 10
     runnerScaleSetName: talos-runner
     containerMode:

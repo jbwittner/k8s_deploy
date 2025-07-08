@@ -7,10 +7,13 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-credentials: "false"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, DELETE, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-origin: "https://app-bankwiz-dev.bytedragon.tech, http://localhost:5174, http://localhost:5173, http://localhost:4174, http://localhost:4173"
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    external-dns.alpha.kubernetes.io/hostname: api-bankwiz-dev.wittnerlab.com
+    external-dns.alpha.kubernetes.io/target: a43b34e6-c752-44d1-99a5-cefa29a1fe53.cfargotunnel.com
 spec:
   ingressClassName : "nginx"
   rules:
-    - host: api-bankwiz-dev.bytedragon.tech
+    - host: api-bankwiz-dev.wittnerlab.com
       http:
         paths:
           - path: /

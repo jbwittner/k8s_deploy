@@ -5,6 +5,7 @@ resources:
 - sealed-secret.yaml
 - namespace.yaml
 - service-account.yaml
+- ingress.yaml
 - ../common
 images:
 - name: bankwiz-server-image
@@ -15,10 +16,6 @@ configMapGenerator:
   files:
     - application.yaml
 patches:
-- path: ingress-patch.json
-  target:
-    kind: Ingress
-    name: bankwiz-ingress
 - path: additional-config.yaml
   target:
     kind: Deployment

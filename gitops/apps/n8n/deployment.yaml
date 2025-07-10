@@ -21,3 +21,9 @@ spec:
                 name: n8n-secret
             - configMapRef:
                 name: n8n-config
+          volumeMounts:
+            - name: n8n-data-storage
+              mountPath: /home/node/.n8n
+      volumes:
+        - name: n8n-data-storage
+          emptyDir: {}

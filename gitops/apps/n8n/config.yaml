@@ -10,3 +10,6 @@ data:
   DB_POSTGRESDB_PORT: "5432"
   DB_POSTGRESDB_USER: n8n_user
   DB_POSTGRESDB_SCHEMA: public
+  GENERIC_TIMEZONE: "Europe/Paris"
+  TZ: "Europe/Paris"
+  N8N_HOST: n8n.wittnerlab.com

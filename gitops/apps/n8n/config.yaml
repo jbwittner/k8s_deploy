@@ -13,4 +13,4 @@ data:
   GENERIC_TIMEZONE: "Europe/Paris"
   TZ: "Europe/Paris"
   N8N_HOST: n8n.wittnerlab.com
-  N8N_PORT: "443"
+  N8N_PROTOCOL: https

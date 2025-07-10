@@ -186,7 +186,9 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: apps-github-actions-controller
+    - name: infra-ingress-nginx
+    - name: infra-sealed-secrets
+    - name: infra-ceph-rook
   interval: 1m0s
   path: ./gitops/apps/n8n
   prune: true

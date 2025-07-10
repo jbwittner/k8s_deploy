@@ -3,6 +3,8 @@ kind: Kustomization
 namespace: n8n
 resources:
   - namespace.yaml
+  - config.yaml
+  - sealed-secret.yaml
   - ingress.yaml
   - deployment.yaml
   - service.yaml

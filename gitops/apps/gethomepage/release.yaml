@@ -53,6 +53,10 @@ spec:
                 icon: grafana.png
                 href: https://grafana.wittnerlab.com/
                 description: Grafana
+            - n8n:
+                icon: mdi-cog-box
+                href: https://n8n.wittnerlab.com/
+                description: n8n workflow automation
             - Minio Console:
                 icon: mdi-bucket
                 href: https://minio-console.wittnerlab.com/

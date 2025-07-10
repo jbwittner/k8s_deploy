@@ -14,3 +14,4 @@ data:
   TZ: "Europe/Paris"
   N8N_HOST: n8n.wittnerlab.com
   N8N_PROTOCOL: https
+  N8N_PORT: "443"

@@ -16,3 +16,8 @@ spec:
         - name: n8n-container
           image: n8nio/n8n:1.102.1
           imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: n8n-secret
+            - configMapRef:
+                name: n8n-config

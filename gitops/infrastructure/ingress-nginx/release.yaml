@@ -20,9 +20,8 @@ spec:
         type: ClusterIP # Type de service
       ingressClassResource:
         default: true
-    data:
-      tcp:
-        7777: "satisfactory/satisfactory-service:7777" # Redirection du port TCP 7777 vers le service satisfactory
-        8888: "satisfactory/satisfactory-service:8888" # Redirection du port TCP 8888 vers le service satisfactory
-      udp:
-        7777: "satisfactory/satisfactory-service:7777" # Redirection du port UDP 7777 vers le service satisfactory
+    tcp:
+      "7777": "satisfactory/satisfactory-service:7777" # Redirection du port TCP 7777 vers le service satisfactory
+      "8888": "satisfactory/satisfactory-service:8888" # Redirection du port TCP 8888 vers le service satisfactory
+    udp:
+      "7777": "satisfactory/satisfactory-service:7777" # Redirection du port UDP 7777 vers le service satisfactory

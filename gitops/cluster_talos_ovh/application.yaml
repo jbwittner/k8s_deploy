@@ -202,6 +202,8 @@ metadata:
   name: apps-satisfactory
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: infra-ingress-nginx
   interval: 1m0s
   path: ./gitops/apps/satisfactory
   prune: true

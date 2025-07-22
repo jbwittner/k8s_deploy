@@ -17,8 +17,6 @@ spec:
           image: wolveix/satisfactory-server:v1.9.9
           imagePullPolicy: Always
           envFrom:
-            - secretRef:
-                name: satisfactory-secret
             - configMapRef:
                 name: satisfactory-config
           resources:

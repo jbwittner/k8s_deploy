@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: satisfactory-config
+  namespace: satisfactory
+data:
+  MAXPLAYERS: '6'
+  PGID: '1000'
+  PUID: '1000'
+  STEAMBETA: "false"

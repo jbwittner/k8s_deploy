@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: satisfactory-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: satisfactory
+  template:
+    metadata:
+      labels:
+        app: satisfactory
+    spec:
+      containers:
+        - name: satisfactory-container
+          image: wolveix/satisfactory-server:v1.9.9
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: satisfactory-secret
+            - configMapRef:
+                name: satisfactory-config
+          resources:
+            requests:
+              memory: "4Gi"
+              cpu: "1000m"
+            limits:
+              memory: "8Gi"
+              cpu: "2000m"

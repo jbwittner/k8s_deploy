@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: satisfactory-service
+spec:
+  selector:
+    app: satisfactory
+  ports:
+    - port: 80
+      targetPort: 443
+      protocol: TCP

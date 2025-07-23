@@ -9,6 +9,7 @@ metadata:
 spec:
   selector:
     app: satisfactory
+  type: NodePort
   ports:
     - name: tcp-7777
       port: 7777

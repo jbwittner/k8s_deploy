@@ -5,7 +5,7 @@ metadata:
   name: cloudflare-repository
   namespace: cloudflare-wittnerlab-com
 spec:
-  interval: 1m
+  interval: 1h0m
   url: https://cloudflare.github.io/helm-charts
 ---
 apiVersion: source.toolkit.fluxcd.io/v1

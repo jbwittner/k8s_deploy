@@ -4,5 +4,5 @@ metadata:
   name: privatebin-repository
   namespace: privatebin
 spec:
-  interval: 1m
+  interval: 6h0m
   url: https://privatebin.github.io/helm-chart

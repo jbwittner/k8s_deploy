@@ -4,5 +4,5 @@ metadata:
   name: excalidraw-repository
   namespace: excalidraw
 spec:
-  interval: 1m
+  interval: 6h0m
   url: https://pmoscode-helm.github.io/excalidraw

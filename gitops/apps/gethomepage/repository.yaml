@@ -4,5 +4,5 @@ metadata:
   name: homepage-repository
   namespace: homepage
 spec:
-  interval: 1m
+  interval: 6h0m
   url: https://jameswynn.github.io/helm-charts

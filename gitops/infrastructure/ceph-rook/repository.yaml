@@ -4,5 +4,5 @@ metadata:
   name: rook-ceph-repository
   namespace: rook-ceph
 spec:
-  interval: 1m
+  interval: 1h0m
   url: https://charts.rook.io/release

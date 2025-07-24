@@ -1,0 +1,33 @@
+# GitOps Configuration
+
+Ce dossier contient la configuration GitOps pour le cluster Kubernetes, utilisant Flux CD pour la gestion automatisée des déploiements.
+
+## Structure
+
+- `apps/` - Applications déployées sur le cluster
+- `infrastructure/` - Composants d'infrastructure critique
+- `cluster_talos_ovh/` - Configuration spécifique au cluster Talos sur OVH
+
+## Politique des intervalles pour les HelmRepository
+
+Pour optimiser les performances du cluster et réduire la charge réseau, les intervalles de synchronisation des repositories Helm sont configurés selon la politique suivante :
+
+### Infrastructure critique (`1h0m`)
+- **sealed-secrets** - Gestion des secrets chiffrés
+- **ingress-nginx** - Contrôleur d'ingress
+- **ceph-rook** - Stockage distribué
+- **cloudflare-tunnel** - Tunnels sécurisés
+
+### Repositories officiels (`24h0m`)
+- **prometheus-community** - Stack de monitoring
+- **kubernetes-sigs** - Metrics server
+- **bitnami** - PostgreSQL, MinIO et autres charts officiels
+
+### Applications communautaires (`6h0m`)
+- **excalidraw** - Outil de diagrammes
+- **homepage** - Tableau de bord personnalisé
+- **stirlingpdf** - Manipulation de fichiers PDF
+- **privatebin** - Partage sécurisé de texte
+- **github-actions** - Runners GitHub Actions
+
+Cette politique permet de réduire significativement la charge sur le cluster tout en maintenant une réactivité appropriée selon la criticité des composants.

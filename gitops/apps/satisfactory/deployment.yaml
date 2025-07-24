@@ -27,18 +27,9 @@ spec:
               memory: "8Gi"
               cpu: "2000m"
           volumeMounts:
-            - name: satisfactory-config
-              mountPath: /config
             - name: satisfactory-data
               mountPath: /config/gamefiles
   volumeClaimTemplates:
-    - metadata:
-        name: satisfactory-config
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        resources:
-          requests:
-            storage: 1Gi
     - metadata:
         name: satisfactory-data
       spec:

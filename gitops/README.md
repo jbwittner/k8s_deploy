@@ -43,3 +43,64 @@ Pour optimiser les performances du cluster et réduire la charge réseau, les in
 - **Homepage**, **bases de données**, **applications utilitaires** : `15m0s`
 
 Cette politique permet de réduire significativement la charge sur le cluster tout en maintenant une réactivité appropriée selon la criticité des composants.
+
+## Commandes de réconciliation manuelle
+
+Avec des intervalles plus longs, il peut être utile de forcer la réconciliation manuelle lors de changements urgents :
+
+### Réconciliation complète du cluster
+```bash
+# Forcer la synchronisation de la source Git principale
+flux reconcile source git flux-system
+
+# Forcer toutes les Kustomizations du système
+flux reconcile kustomization flux-system
+```
+
+### Réconciliation d'une Kustomization spécifique
+```bash
+# Infrastructure
+flux reconcile kustomization infra-sealed-secrets
+flux reconcile kustomization infra-ingress-nginx
+flux reconcile kustomization infra-ceph-rook
+
+# Applications
+flux reconcile kustomization apps-monitoring
+flux reconcile kustomization apps-excalidraw
+flux reconcile kustomization apps-stirlingpdf
+```
+
+### Réconciliation d'un HelmRepository
+```bash
+# Forcer la mise à jour d'un repository Helm
+flux reconcile source helm sealed-secrets-repository -n sealed-secrets
+flux reconcile source helm monitoring-repository -n monitoring
+flux reconcile source helm excalidraw-repository -n excalidraw
+```
+
+### Réconciliation d'un HelmRelease
+```bash
+# Forcer le redéploiement d'une application
+flux reconcile helmrelease sealed-secrets-release -n sealed-secrets
+flux reconcile helmrelease monitoring-release -n monitoring
+flux reconcile helmrelease excalidraw-release -n excalidraw
+```
+
+### Réconciliation en cascade
+```bash
+# Forcer la réconciliation d'une source ET de ses dépendances
+flux reconcile source git flux-system --with-source
+flux reconcile kustomization infra-ingress-nginx --with-source
+```
+
+### Surveillance en temps réel
+```bash
+# Surveiller les événements Flux
+flux events --watch
+
+# Vérifier le statut global
+flux get all
+
+# Vérifier un namespace spécifique
+flux get all -n monitoring
+```

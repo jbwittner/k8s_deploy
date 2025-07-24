@@ -13,7 +13,7 @@ spec:
       targetPort: 7777
       protocol: TCP
     - name: udp-7777
-      nodePort: 30778
+      nodePort: 30777
       port: 7777
       targetPort: 7777
       protocol: UDP

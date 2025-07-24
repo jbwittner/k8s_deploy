@@ -24,7 +24,7 @@ spec:
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
-  name: flux-notification-discord
+  name: flux-error-notification-discord
   namespace: flux-system
 spec:
   summary: "cluster addons"
@@ -46,7 +46,7 @@ spec:
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
-  name: flux-notification-discord
+  name: flux-git-repository-notification-discord
   namespace: flux-system
 spec:
   summary: "cluster addons"

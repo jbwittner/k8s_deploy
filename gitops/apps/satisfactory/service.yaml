@@ -2,26 +2,23 @@ apiVersion: v1
 kind: Service
 metadata:
   name: satisfactory-service
-  annotations:
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-    external-dns.alpha.kubernetes.io/hostname: satisfactory.wittnerlab.com
-    external-dns.alpha.kubernetes.io/target: a43b34e6-c752-44d1-99a5-cefa29a1fe53.cfargotunnel.com
 spec:
   selector:
     app: satisfactory
+  type: NodePort
   ports:
     - name: tcp-7777
-      nodePort: 7777
+      nodePort: 30777
       port: 7777
       targetPort: 7777
       protocol: TCP
     - name: udp-7777
-      nodePort: 7777
+      nodePort: 30778
       port: 7777
       targetPort: 7777
       protocol: UDP
     - name: tcp-8888
-      nodePort: 8888
+      nodePort: 30888
       port: 8888
       targetPort: 8888
       protocol: TCP

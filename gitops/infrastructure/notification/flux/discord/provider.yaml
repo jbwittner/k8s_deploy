@@ -38,3 +38,13 @@ spec:
   type: discord
   secretRef:
     name: discord-flux-helm-webhook
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: discord-flux-oci-provider
+  namespace: flux-system
+spec:
+  type: discord
+  secretRef:
+    name: discord-flux-oci-webhook

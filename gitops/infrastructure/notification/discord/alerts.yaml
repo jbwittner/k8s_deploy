@@ -60,3 +60,21 @@ spec:
   eventSources:
     - kind: GitRepository
       name: '*'
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: flux-kustomization-notification-discord
+  namespace: flux-system
+spec:
+  summary: "cluster addons"
+  eventMetadata:
+    env: "production"
+    cluster: "my-cluster"
+    region: "us-east-2"
+  providerRef:
+    name: discord-flux-kustomization-provider
+  eventSeverity: info
+  eventSources:
+    - kind: Kustomization
+      name: '*'

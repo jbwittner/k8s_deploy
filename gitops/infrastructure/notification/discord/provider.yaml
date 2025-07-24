@@ -28,3 +28,13 @@ spec:
   type: discord
   secretRef:
     name: discord-flux-git-repository-webhook
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: discord-flux-kustomization-provider
+  namespace: flux-system
+spec:
+  type: discord
+  secretRef:
+    name: discord-flux-kustomization-webhook

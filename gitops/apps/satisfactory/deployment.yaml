@@ -12,6 +12,10 @@ spec:
       labels:
         app: satisfactory
     spec:
+      volumes:
+      - name: satisfactory-gamefiles
+        persistentVolumeClaim:
+          claimName: satisfactory-data
       containers:
         - name: satisfactory-container
           image: wolveix/satisfactory-server:v1.9.9
@@ -27,5 +31,5 @@ spec:
               memory: "8Gi"
               cpu: "2000m"
           volumeMounts:
-            - name: satisfactory-data
+            - name: satisfactory-gamefiles
               mountPath: /config/gamefiles

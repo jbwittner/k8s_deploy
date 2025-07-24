@@ -203,7 +203,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: infra-ingress-nginx
+    - name: infra-ceph-rook
   interval: 1m0s
   path: ./gitops/apps/satisfactory
   prune: true

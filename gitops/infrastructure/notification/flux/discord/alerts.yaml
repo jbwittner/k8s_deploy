@@ -59,7 +59,7 @@ spec:
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
-  name: flux-helm-notification-discord
+  name: flux-helm-release-notification-discord
   namespace: flux-system
 spec:
   summary: "cluster addons"
@@ -77,7 +77,7 @@ spec:
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
-  name: flux-helm-notification-discord
+  name: flux-helm-chart-notification-discord
   namespace: flux-system
 spec:
   summary: "cluster addons"

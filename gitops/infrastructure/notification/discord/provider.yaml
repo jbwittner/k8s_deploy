@@ -2,16 +2,6 @@
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Provider
 metadata:
-  name: discord-provider
-  namespace: flux-system
-spec:
-  type: discord
-  secretRef:
-    name: discord-webhook
----
-apiVersion: notification.toolkit.fluxcd.io/v1beta3
-kind: Provider
-metadata:
   name: discord-flux-error-provider
   namespace: flux-system
 spec:
@@ -38,3 +28,13 @@ spec:
   type: discord
   secretRef:
     name: discord-flux-kustomization-webhook
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: discord-flux-helm-provider
+  namespace: flux-system
+spec:
+  type: discord
+  secretRef:
+    name: discord-flux-helm-webhook

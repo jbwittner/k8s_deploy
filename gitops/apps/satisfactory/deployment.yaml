@@ -29,11 +29,3 @@ spec:
           volumeMounts:
             - name: satisfactory-data
               mountPath: /config/gamefiles
-volumeClaimTemplates:
-  - metadata:
-      name: satisfactory-data
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 20Gi

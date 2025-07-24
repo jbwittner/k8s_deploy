@@ -4,5 +4,6 @@ namespace: satisfactory
 resources:
   - namespace.yaml
   - config.yaml
+  - volume.yaml
   - deployment.yaml
   - service.yaml

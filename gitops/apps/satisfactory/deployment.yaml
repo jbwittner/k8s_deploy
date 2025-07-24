@@ -12,6 +12,8 @@ spec:
       labels:
         app: satisfactory
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: w-ns3106816
       volumes:
       - name: satisfactory-gamefiles
         persistentVolumeClaim:

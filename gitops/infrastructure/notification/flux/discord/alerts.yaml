@@ -68,10 +68,28 @@ spec:
     cluster: "my-cluster"
     region: "us-east-2"
   providerRef:
-    name: discord-flux-helm-provider
+    name: discord-flux-helm-release-provider
   eventSeverity: info
   eventSources:
     - kind: HelmRelease
+      name: '*'
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: flux-helm-notification-discord
+  namespace: flux-system
+spec:
+  summary: "cluster addons"
+  eventMetadata:
+    env: "production"
+    cluster: "my-cluster"
+    region: "us-east-2"
+  providerRef:
+    name: discord-flux-helm-chart-provider
+  eventSeverity: info
+  eventSources:
+    - kind: HelmChart
       name: '*'
 ---
 apiVersion: notification.toolkit.fluxcd.io/v1beta3

@@ -4,7 +4,7 @@ metadata:
   name: rook-ceph-operator-release
   namespace: rook-ceph
 spec:
-  interval: 1m
+  interval: 10m0s
   chart:
     spec:
       chart: rook-ceph # Nom du chart

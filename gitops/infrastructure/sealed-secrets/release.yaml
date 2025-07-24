@@ -4,7 +4,7 @@ metadata:
   name: sealed-secrets-release
   namespace: sealed-secrets
 spec:
-  interval: 1m
+  interval: 5m0s
   chart:
     spec:
       chart: sealed-secrets # Nom du chart

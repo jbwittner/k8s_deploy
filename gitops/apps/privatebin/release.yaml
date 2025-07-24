@@ -4,7 +4,7 @@ metadata:
   name: privatebin-release
   namespace: privatebin
 spec:
-  interval: 1m # Interval de synchronisation avec le repository
+  interval: 15m0s # Interval de synchronisation avec le repository
   chart:
     spec:
       chart: privatebin # Nom du chart

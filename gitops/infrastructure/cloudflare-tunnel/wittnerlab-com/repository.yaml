@@ -14,5 +14,5 @@ metadata:
   name: kubernetes-sigs-repository
   namespace: cloudflare-wittnerlab-com
 spec:
-  interval: 1m
+  interval: 24h0m
   url: https://kubernetes-sigs.github.io/external-dns

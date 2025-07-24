@@ -4,7 +4,7 @@ metadata:
   name: rook-ceph-cluster-release
   namespace: rook-ceph
 spec:
-  interval: 1m
+  interval: 10m0s
   chart:
     spec:
       chart: rook-ceph-cluster # Nom du chart

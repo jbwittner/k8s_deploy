@@ -5,7 +5,7 @@ metadata:
   name: cloudflare-release
   namespace: cloudflare-wittnerlab-com
 spec:
-  interval: 1m
+  interval: 5m0s
   chart:
     spec:
       chart: cloudflare-tunnel # Nom du chart
@@ -39,7 +39,7 @@ metadata:
   name: kubernetes-sigs-release
   namespace: cloudflare-wittnerlab-com
 spec:
-  interval: 1m
+  interval: 5m0s
   chart:
     spec:
       chart: external-dns # Nom du chart

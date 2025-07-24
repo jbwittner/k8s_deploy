@@ -4,7 +4,7 @@ metadata:
   name: metrics-server-release
   namespace: metrics-server
 spec:
-  interval: 1m
+  interval: 10m0s
   chart:
     spec:
       chart: metrics-server # Nom du chart

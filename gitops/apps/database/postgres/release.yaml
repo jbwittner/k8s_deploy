@@ -4,7 +4,7 @@ metadata:
   name: database-postgres-release
   namespace: database
 spec:
-  interval: 1m
+  interval: 15m0s
   chart:
     spec:
       chart: postgresql # Nom du chart

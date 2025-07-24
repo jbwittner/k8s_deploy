@@ -4,7 +4,7 @@ metadata:
   name: gha-runner-scale-set-controller-release
   namespace: arc-systems
 spec:
-  interval: 1m
+  interval: 10m0s
   chart:
     spec:
       chart: gha-runner-scale-set-controller # Nom du chart

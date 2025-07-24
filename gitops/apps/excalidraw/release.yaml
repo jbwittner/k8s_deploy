@@ -4,7 +4,7 @@ metadata:
   name: excalidraw-release
   namespace: excalidraw
 spec:
-  interval: 1m
+  interval: 15m0s
   chart:
     spec:
       chart: excalidraw # Nom du chart

@@ -4,7 +4,7 @@ metadata:
   name: homepage-release
   namespace: homepage
 spec:
-  interval: 1m
+  interval: 15m0s
   chart:
     spec:
       chart: homepage # Nom du chart

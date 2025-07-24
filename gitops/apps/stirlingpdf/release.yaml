@@ -4,7 +4,7 @@ metadata:
   name: stirlingpdf-release
   namespace: stirlingpdf
 spec:
-  interval: 1m # Interval de synchronisation avec le repository
+  interval: 15m0s # Interval de synchronisation avec le repository
   chart:
     spec:
       chart: stirling-pdf-chart # Nom du chart

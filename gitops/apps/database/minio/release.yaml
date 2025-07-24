@@ -4,7 +4,7 @@ metadata:
   name: database-minio-release
   namespace: database
 spec:
-  interval: 1m
+  interval: 15m0s
   chart:
     spec:
       chart: minio # Nom du chart

@@ -4,9 +4,11 @@ metadata:
   name: satisfactory-config
   namespace: satisfactory
 data:
-  MAXPLAYERS: '6'
+  DEBUG: 'false'
+  MAXPLAYERS: '8'
   PGID: '1000'
   PUID: '1000'
+  SKIPUPDATE: 'false'
   STEAMBETA: "false"
   MAXTICKRATE: '200'
   SERVERMESSAGINGPORT: '30888'

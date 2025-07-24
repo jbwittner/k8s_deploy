@@ -1,3 +1,4 @@
+---
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Provider
 metadata:
@@ -7,3 +8,23 @@ spec:
   type: discord
   secretRef:
     name: discord-webhook
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: discord-flux-error-provider
+  namespace: flux-system
+spec:
+  type: discord
+  secretRef:
+    name: discord-flux-error-webhook
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: discord-flux-git-repository-provider
+  namespace: flux-system
+spec:
+  type: discord
+  secretRef:
+    name: discord-flux-git-repository-webhook

@@ -4,5 +4,4 @@ namespace: minecraft-ppz
 resources:
   - namespace.yaml
   - config.yaml
-  - sealed-secret.yaml
   - deployment.yaml

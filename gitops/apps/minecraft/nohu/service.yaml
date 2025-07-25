@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minecraft-nohu-service
+spec:
+  selector:
+    app: minecraft-nohu
+  type: NodePort
+  ports:
+    - name: tcp-25565
+      nodePort: 32589
+      port: 25565
+      targetPort: 25565
+      protocol: UDP

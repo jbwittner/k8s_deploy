@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-nohu-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft-nohu
+  template:
+    metadata:
+      labels:
+        app: minecraft-nohu
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: w-ns3106816
+      containers:
+        - name: minecraft-nohu-container
+          image: itzg/minecraft-server:latest
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: minecraft-nohu-config

@@ -11,4 +11,4 @@ spec:
       nodePort: 32588
       port: 25565
       targetPort: 25565
-      protocol: UDP
+      protocol: TCP

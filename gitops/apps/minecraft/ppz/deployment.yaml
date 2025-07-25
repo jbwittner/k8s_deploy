@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: minecraft-ppz-container
-          image: itzg/minecraft-server:1.102.1
+          image: itzg/minecraft-server:latest
           imagePullPolicy: Always
           envFrom:
             - configMapRef:

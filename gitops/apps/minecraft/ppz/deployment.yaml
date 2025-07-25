@@ -16,7 +16,7 @@ spec:
         kubernetes.io/hostname: w-ns3106816
       containers:
         - name: minecraft-ppz-container
-          image: itzg/minecraft-server:latest
+          image: itzg/minecraft-server:java21-graalvm
           imagePullPolicy: Always
           envFrom:
             - configMapRef:

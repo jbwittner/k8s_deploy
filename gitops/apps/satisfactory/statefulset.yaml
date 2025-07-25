@@ -14,13 +14,6 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/hostname: w-ns3106816
-      volumes:
-      - name: satisfactory-gamefiles
-        persistentVolumeClaim:
-          claimName: satisfactory-data-gamefiles
-      - name: satisfactory-saves
-        persistentVolumeClaim:
-          claimName: satisfactory-data-saves
       containers:
         - name: satisfactory-container
           image: wolveix/satisfactory-server:v1.9.9
@@ -36,7 +29,24 @@ spec:
               memory: "8Gi"
               cpu: "4000m"
           volumeMounts:
-            - name: satisfactory-gamefiles
+            - name: satisfactory-data-gamefiles
               mountPath: /config/gamefiles
-            - name: satisfactory-saves
+            - name: satisfactory-data-saves
               mountPath: /config/saved
+  volumeClaimTemplates:
+    - metadata:
+        name: satisfactory-data-gamefiles
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 25Gi
+    - metadata:
+        name: satisfactory-data-saves
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 5Gi

@@ -5,5 +5,5 @@ resources:
   - namespace.yaml
   - config.yaml
   - volume.yaml
-  - deployment.yaml
+  - statefulset.yaml
   - service.yaml

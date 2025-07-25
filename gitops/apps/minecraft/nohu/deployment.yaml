@@ -23,10 +23,10 @@ spec:
                 name: minecraft-nohu-config
           resources:
             requests:
-              memory: "2Gi"
-              cpu: "1000m"
+              memory: "1Gi"
+              cpu: "500m"
             limits:
-              memory: "4Gi"
+              memory: "3Gi"
               cpu: "2000m"
           volumeMounts:
             - mountPath: /data

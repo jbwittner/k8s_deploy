@@ -12,6 +12,8 @@ spec:
       labels:
         app: minecraft-ppz
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: w-ns3106816
       containers:
         - name: minecraft-ppz-container
           image: itzg/minecraft-server:latest

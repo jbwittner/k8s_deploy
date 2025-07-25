@@ -37,8 +37,8 @@ spec:
                 - localhost 
                 - --port
                 - "25565"
-            initialDelaySeconds: 30
-            periodSeconds: 5
-            failureThreshold: 18
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 20
 
 

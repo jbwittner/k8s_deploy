@@ -4,4 +4,20 @@ metadata:
   name: minecraft-nohu-config
   namespace: minecraft
 data:
+  VERSION: "1.21.5"
   EULA: "TRUE"
+  TYPE: FABRIC
+  MOTD: "§aFuck script kiddies"
+  DIFFICULTY: "hard"
+  MAX_MEMORY: "2G"
+  SNOOPER_ENABLED: "FALSE"
+  SERVER_NAME: "minecraft-nohu.wittnerlabs.com"
+  VIEW_DISTANCE: "12"
+  ENABLE_ROLLING_LOGS: "TRUE"
+  ONLINE_MODE: "false"
+  ENFORCE_WHITELIST: "TRUE"
+  PROXY_PROTOCOL: "TRUE"
+  # ---- RCON so the backup can pause the server I/O
+  #ENABLE_RCON: "true"
+  #RCON_PASSWORD: "xny550aEaBFmvesM2D@E5"
+  #RCON_PORT: "25575"

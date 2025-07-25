@@ -4,4 +4,16 @@ metadata:
   name: minecraft-ppz-config
   namespace: minecraft
 data:
+  VERSION: "1.21.5"
   EULA: "TRUE"
+  DIFFICULTY: "hard"
+  MEMORY: "2G"
+  SNOOPER_ENABLED: "FALSE"
+  ENABLE_ROLLING_LOGS: "TRUE"
+  ONLINE_MODE: "false"
+  ENFORCE_WHITELIST: "TRUE"
+  PROXY_PROTOCOL: "TRUE"
+  # ---- RCON so the backup can pause the server I/O
+  #ENABLE_RCON: "true"
+  #RCON_PASSWORD: "xny550aEaBFmvesM2D@E5"
+  #RCON_PORT: "25575"

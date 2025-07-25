@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-ppz-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft-ppz
+  template:
+    metadata:
+      labels:
+        app: minecraft-ppz
+    spec:
+      containers:
+        - name: minecraft-ppz-container
+          image: itzg/minecraft-server:1.102.1
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: minecraft-ppz-config

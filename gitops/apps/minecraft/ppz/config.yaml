@@ -4,7 +4,7 @@ metadata:
   name: minecraft-ppz-config
   namespace: minecraft
 data:
-  VERSION: "1.21.5"
+  VERSION: "1.21.7"
   EULA: "TRUE"
   DIFFICULTY: "hard"
   MEMORY: "2G"

@@ -9,7 +9,7 @@ data:
   TYPE: FABRIC
   MOTD: "§aFuck script kiddies"
   DIFFICULTY: "hard"
-  MAX_MEMORY: "2G"
+  MEMORY: "2G"
   SNOOPER_ENABLED: "FALSE"
   SERVER_NAME: "minecraft-nohu.wittnerlabs.com"
   VIEW_DISTANCE: "12"

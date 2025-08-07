@@ -31,7 +31,7 @@ spec:
       spec:
         containers:
         - name: runner
-          image: ghcr.io/jbwittner/action_runner_image:main-e46ae4c26187615dabbc542d129cc490acffdeda
+          image: ghcr.io/jbwittner/action_runner_image:main-7a67301b3e33f9aa9dc89e439d2a86c82eb6557d
           command: ["/home/runner/run.sh"]
           resources:
             limits:

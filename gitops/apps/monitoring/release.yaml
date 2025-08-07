@@ -50,7 +50,7 @@ spec:
         passwordKey: admin_password
     prometheus:
       prometheusSpec:
-        retention: 5d    
+        retention: 7d    
         storageSpec: 
           volumeClaimTemplate:
             spec:

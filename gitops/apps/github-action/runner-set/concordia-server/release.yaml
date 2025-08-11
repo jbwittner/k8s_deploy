@@ -18,7 +18,7 @@ spec:
     githubConfigSecret: github-concordia-secret
     minRunners: 0
     maxRunners: 10
-    runnerScaleSetName: talos-runner-toto
+    runnerScaleSetName: talos-runner-concordia-server
     containerMode:
       type: "dind"
       kubernetesModeWorkVolumeClaim:

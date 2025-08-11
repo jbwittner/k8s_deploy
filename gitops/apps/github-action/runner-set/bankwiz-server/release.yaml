@@ -18,7 +18,7 @@ spec:
     githubConfigSecret: github-bankwiz-secret
     minRunners: 0
     maxRunners: 10
-    runnerScaleSetName: talos-runner-test
+    runnerScaleSetName: talos-runner-bankwiz-server
     containerMode:
       type: "dind"
       kubernetesModeWorkVolumeClaim:

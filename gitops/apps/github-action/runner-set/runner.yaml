@@ -1,0 +1,39 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: app-github-action-runner-common
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./gitops/apps/github-action/runner-set/common
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: app-github-action-runner-bankwiz-server
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./gitops/apps/github-action/runner-set/bankwiz-server
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: app-github-action-runner-concordia-server
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./gitops/apps/github-action/runner-set/concordia-server
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system

@@ -1,0 +1,42 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: gha-runner-scale-set-concordia-release
+  namespace: arc-systems
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      chart: gha-runner-scale-set # Nom du chart
+      version: 0.12.1
+      sourceRef:
+        kind: HelmRepository
+        name: actions-runner-controller-charts-repository
+        namespace: arc-systems
+  values:
+    githubConfigUrl: https://github.com/jbwittner/concordia_server
+    githubConfigSecret: github-concordia-secret
+    minRunners: 0
+    maxRunners: 10
+    runnerScaleSetName: talos-runner
+    containerMode:
+      type: "dind"
+      kubernetesModeWorkVolumeClaim:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: "ceph-block"
+        resources:
+          requests:
+            storage: 2Gi
+    template:
+      spec:
+        containers:
+        - name: runner
+          image: ghcr.io/jbwittner/action_runner_image:main-7a67301b3e33f9aa9dc89e439d2a86c82eb6557d
+          command: ["/home/runner/run.sh"]
+          resources:
+            limits:
+              cpu: "4.0"
+              memory: "8Gi"
+            requests:
+              cpu: "2.0"
+              memory: "4Gi"

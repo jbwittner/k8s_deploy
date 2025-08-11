@@ -3,5 +3,3 @@ kind: Kustomization
 namespace: arc-systems
 resources:
   - repository.yaml
-  - sealed-secret.yaml
-  - release.yaml

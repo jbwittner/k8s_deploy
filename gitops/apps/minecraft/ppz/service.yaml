@@ -7,8 +7,8 @@ spec:
     app: minecraft-ppz
   type: NodePort
   ports:
-    - name: tcp-31777
-      nodePort: 31777
+    - name: tcp-25565
+      nodePort: 32588
       port: 25565
       targetPort: 25565
       protocol: TCP

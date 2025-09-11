@@ -6,6 +6,6 @@ spec:
   selector:
     app: minecraft-ppz
   ports:
-    - port: 25565
+    - port: 80
       targetPort: 25565
       protocol: TCP

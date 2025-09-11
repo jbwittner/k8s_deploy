@@ -18,4 +18,4 @@ spec:
               service:
                 name: minecraft-ppz-service
                 port:
-                  number: 25565
+                  number: 80

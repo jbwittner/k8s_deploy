@@ -40,21 +40,6 @@ spec:
           env:
             - name: DEBIAN_FRONTEND
               value: "noninteractive"
-          # Installation des outils nécessaires au démarrage
-          lifecycle:
-            postStart:
-              exec:
-                command:
-                  - /bin/bash
-                  - -c
-                  - |
-                    apt-get update
-                    apt-get install -y nano vim rsync zip unzip curl wget git
-                    echo "alias ll='ls -la'" >> /root/.bashrc
-                    echo "alias ppz='cd /minecraft-data/ppz'" >> /root/.bashrc
-                    echo "alias nohu='cd /minecraft-data/nohu'" >> /root/.bashrc
-                    echo "alias backup='cd /backups'" >> /root/.bashrc
-                    chmod +x /backup-script.sh
       volumes:
         - name: minecraft-ppz-data
           persistentVolumeClaim:

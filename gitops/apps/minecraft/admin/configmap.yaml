@@ -75,3 +75,58 @@ data:
 
     echo ""
     echo "✅ Sauvegarde terminée - $TIMESTAMP"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: minecraft-init-script
+  namespace: minecraft
+data:
+  init-script.sh: |
+    #!/bin/bash
+    
+    echo "🚀 Initialisation du pod admin Minecraft..."
+    
+    # Mise à jour des paquets
+    echo "📦 Mise à jour des paquets..."
+    apt-get update -qq
+    
+    # Installation des outils essentiels
+    echo "🛠️ Installation des outils..."
+    apt-get install -y -qq \
+        nano vim rsync zip unzip curl wget git \
+        openssh-server htop tree ncdu
+    
+    # Configuration SSH
+    echo "🔐 Configuration SSH..."
+    mkdir -p /var/run/sshd
+    echo 'root:minecraft123' | chpasswd
+    
+    # Configuration SSH sécurisée
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
+    sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
+    
+    # Démarrage SSH en arrière-plan
+    echo "🔑 Démarrage du service SSH..."
+    /usr/sbin/sshd -D &
+    
+    # Configuration des alias
+    echo "⚙️ Configuration des alias..."
+    cat >> /root/.bashrc << 'EOFBASH'
+    alias ll='ls -la'
+    alias ppz='cd /minecraft-data/ppz'
+    alias nohu='cd /minecraft-data/nohu'
+    alias backup='cd /backups'
+    alias minecraft-backup='/backup-script.sh'
+    EOFBASH
+    
+    # Permissions des scripts
+    chmod +x /backup-script.sh 2>/dev/null || true
+    
+    # Création des dossiers de base
+    mkdir -p /minecraft-data/ppz /minecraft-data/nohu /backups
+    
+    echo "✅ Initialisation terminée!"
+    echo "🎮 Pod admin Minecraft prêt à l'utilisation"
+    echo "🔗 Connexion SSH: port 22 (mot de passe: minecraft123)"

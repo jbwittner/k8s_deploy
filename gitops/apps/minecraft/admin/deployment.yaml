@@ -19,7 +19,7 @@ spec:
         - name: ubuntu-admin
           image: ubuntu:22.04
           command: ["/bin/bash"]
-          args: ["-c", "while true; do sleep 30; done"]
+          args: ["-c", "/init-script.sh && while true; do sleep 30; done"]
           resources:
             requests:
               memory: "256Mi"
@@ -37,29 +37,12 @@ spec:
             - name: backup-script
               mountPath: /backup-script.sh
               subPath: backup-script.sh
+            - name: init-script
+              mountPath: /init-script.sh
+              subPath: init-script.sh
           env:
             - name: DEBIAN_FRONTEND
               value: "noninteractive"
-          # Installation des outils nécessaires au démarrage
-          lifecycle:
-            postStart:
-              exec:
-                command:
-                  - /bin/bash
-                  - -c
-                  - |
-                    apt-get update
-                    apt-get install -y nano vim rsync zip unzip curl wget git openssh-server
-                    mkdir -p /var/run/sshd
-                    echo 'root:minecraft123' | chpasswd
-                    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-                    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
-                    service ssh start
-                    echo "alias ll='ls -la'" >> /root/.bashrc
-                    echo "alias ppz='cd /minecraft-data/ppz'" >> /root/.bashrc
-                    echo "alias nohu='cd /minecraft-data/nohu'" >> /root/.bashrc
-                    echo "alias backup='cd /backups'" >> /root/.bashrc
-                    chmod +x /backup-script.sh
           ports:
             - containerPort: 22
               name: ssh
@@ -76,6 +59,10 @@ spec:
         - name: backup-script
           configMap:
             name: minecraft-backup-script
+            defaultMode: 0755
+        - name: init-script
+          configMap:
+            name: minecraft-init-script
             defaultMode: 0755
 ---
 apiVersion: v1

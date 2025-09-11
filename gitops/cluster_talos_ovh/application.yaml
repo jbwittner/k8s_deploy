@@ -218,7 +218,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./gitops/apps/minecraft/minecraft.yaml
+  path: ./gitops/apps/minecraft
   prune: true
   sourceRef:
     kind: GitRepository

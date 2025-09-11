@@ -11,4 +11,4 @@ spec:
       port: 22
       targetPort: 22
       name: ssh
-  type: ClusterIP
+  type: ClusterIP  # Pas d'exposition externe, accès via port-forward uniquement

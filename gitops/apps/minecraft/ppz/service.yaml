@@ -5,7 +5,10 @@ metadata:
 spec:
   selector:
     app: minecraft-ppz
+  type: NodePort
   ports:
-    - port: 25565
+    - name: tcp-31777
+      nodePort: 31777
+      port: 25565
       targetPort: 25565
       protocol: TCP

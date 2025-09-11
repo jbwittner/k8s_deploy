@@ -39,7 +39,7 @@ spec:
                 - --host 
                 - localhost 
                 - --port
-                - "25565"
+                - "25033"
             initialDelaySeconds: 60
             periodSeconds: 10
             failureThreshold: 20

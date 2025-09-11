@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-admin
+  namespace: minecraft
+spec:
+  replicas: 0  # Par défaut arrêté, à lancer manuellement quand nécessaire
+  selector:
+    matchLabels:
+      app: minecraft-admin
+  template:
+    metadata:
+      labels:
+        app: minecraft-admin
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: w-ns3106816  # Même nœud que les serveurs Minecraft
+      containers:
+        - name: ubuntu-admin
+          image: ubuntu:22.04
+          command: ["/bin/sleep"]
+          args: ["infinity"]  # Keep container running
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: minecraft-ppz-data
+              mountPath: /minecraft-data/ppz
+            - name: minecraft-nohu-data
+              mountPath: /minecraft-data/nohu
+            - name: backup-storage
+              mountPath: /backups
+            - name: backup-script
+              mountPath: /backup-script.sh
+              subPath: backup-script.sh
+          env:
+            - name: DEBIAN_FRONTEND
+              value: "noninteractive"
+          # Installation des outils nécessaires au démarrage
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                  - /bin/bash
+                  - -c
+                  - |
+                    apt-get update
+                    apt-get install -y nano vim rsync zip unzip curl wget git
+                    echo "alias ll='ls -la'" >> /root/.bashrc
+                    echo "alias ppz='cd /minecraft-data/ppz'" >> /root/.bashrc
+                    echo "alias nohu='cd /minecraft-data/nohu'" >> /root/.bashrc
+                    echo "alias backup='cd /backups'" >> /root/.bashrc
+                    chmod +x /backup-script.sh
+      volumes:
+        - name: minecraft-ppz-data
+          persistentVolumeClaim:
+            claimName: data-minecraft-ppz-deployment-0
+        - name: minecraft-nohu-data
+          persistentVolumeClaim:
+            claimName: data-minecraft-nohu-deployment-0
+        - name: backup-storage
+          persistentVolumeClaim:
+            claimName: minecraft-admin-backup
+        - name: backup-script
+          configMap:
+            name: minecraft-backup-script
+            defaultMode: 0755
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: minecraft-admin-backup
+  namespace: minecraft
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

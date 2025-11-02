@@ -3,9 +3,19 @@
 ## Installation
 
 ```shell
-helm repo add argo https://argoproj.github.io/argo-helm
+kubectl apply -k ./argocd
 ```
 
+## Get default admin password
+
 ```shell
-helm install --values classic/argocd/values.yaml argocd argo/argo-cd --namespace argocd --create-namespace
+kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 -d
+```
+
+## Accessing the Argo CD web UI
+
+By default, the Argo CD API server is not exposed with an external IP. To access the Argo CD web UI, you can port-forward the service to your local machine:
+
+```shell
+kubectl port-forward svc/argocd-server -n argocd 8080:443
 ``` 

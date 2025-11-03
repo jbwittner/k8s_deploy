@@ -3,7 +3,15 @@
 ## Installation
 
 ```shell
-kubectl apply -k ./argocd
+helm repo add argo https://argoproj.github.io/argo-helm
+```
+
+```shell
+helm search repo argo
+```
+
+```shell
+helm install --values gitops/infra/argocd/values.yaml argocd argo/argo-cd --namespace argocd --create-namespace
 ```
 
 ## Get default admin password

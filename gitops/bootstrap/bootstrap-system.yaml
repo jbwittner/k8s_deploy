@@ -12,9 +12,9 @@ spec:
   # Allow manifests to deploy from any Git repos
   sourceRepos:
   - '*'
-  # Only permit applications to deploy to the guestbook namespace in the same cluster
+  # Only permit applications to deploy to the argocd namespace in the same cluster
   destinations:
-  - namespace: guestbook
+  - namespace: argocd
     server: https://kubernetes.default.svc
   # Deny all cluster-scoped resources from being created, except for Namespace
   clusterResourceWhitelist:
@@ -34,18 +34,30 @@ spec:
     kind: Deployment
   - group: 'apps'
     kind: StatefulSet
+  - group: ''
+    kind: ServiceAccount
+  - group: ''
+    kind: Service
+  - group: ''
+    kind: ConfigMap
+  - group: ''
+    kind: Secret
+  - group: 'rbac.authorization.k8s.io'
+    kind: Role
+  - group: 'rbac.authorization.k8s.io'
+    kind: RoleBinding
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: system-argocd
+  name: argocd
   namespace: argocd
 spec:
-  project: system-project
+  project: default
   source:
     repoURL: https://github.com/jbwittner/k8s_deploy
     targetRevision: main
-    path: system/argocd
+    path: gitops/system/argocd
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

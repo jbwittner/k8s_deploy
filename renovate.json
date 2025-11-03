@@ -3,6 +3,9 @@
   "extends": [
     "config:recommended"
   ],
+  "ignorePaths": [
+    "archive"
+  ],
   "argocd": {
     "managerFilePatterns": ["/gitops/.+\\.yaml$/"]
   }

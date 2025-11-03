@@ -16,10 +16,10 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd
+  name: bootstrap-apps
   namespace: argocd
 spec:
-  project: default
+  project: app-project
   source:
     repoURL: https://github.com/jbwittner/k8s_deploy
     targetRevision: main

@@ -11,7 +11,7 @@ spec:
   source:
     chart: homepage
     repoURL: https://jameswynn.github.io/helm-charts
-    targetRevision: 2.0.1
+    targetRevision: 2.1.0
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

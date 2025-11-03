@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: simple-app
+  name: app-time-coffee
   namespace: argocd
 spec:
   destination:
-    namespace: simple-appo
+    namespace: app-time-coffee
     server: https://kubernetes.default.svc
   project: default
   source:

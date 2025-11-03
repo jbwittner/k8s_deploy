@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra-ceph-rook-cluster
+  name: infra-ceph-rook-operator
   namespace: argocd
 spec:
   destination:

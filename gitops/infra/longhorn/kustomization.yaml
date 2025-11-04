@@ -4,13 +4,3 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - longhorn.yaml
-
-patches:
-- path: add-disk-w-ns3058844.patch.yaml
-  target:
-    group: longhorn.io
-    # Confirmed by your CRD output
-    version: v1beta2 
-    kind: Node
-    # Specify the name of your first node
-    name: w-ns3058844

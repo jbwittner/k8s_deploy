@@ -11,7 +11,7 @@ helm search repo argo
 ```
 
 ```shell
-helm install --values gitops/argocd/values.yaml argocd argo/argo-cd --namespace argocd --create-namespace
+helm install --values argocd/values.yaml argocd argo/argo-cd --namespace argocd --create-namespace
 ```
 
 ## Get default admin password

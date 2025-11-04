@@ -1,0 +1,12 @@
+# add-disk.patch.yaml
+spec:
+  disks:
+    # You can name this key anything, e.g., 'secondary-disk'
+    additional-disk:
+      allowScheduling: true
+      diskDriver: ""
+      diskType: filesystem
+      evictionRequested: false
+      path: /var/mnt/additional-storage
+      storageReserved: 0
+      tags: []

@@ -11,7 +11,7 @@ spec:
   source:
     chart: openebs/openebs
     repoURL: https://openebs.github.io/openebs
-    targetRevision: 4.1.3
+    targetRevision: 4.3.2
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

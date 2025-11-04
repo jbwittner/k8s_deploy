@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - pod-security.yaml
   - rook-ceph-operator.yaml
-#  - rook-ceph-cluster.yaml
+  - rook-ceph-cluster.yaml
 #  - toolbox.yaml

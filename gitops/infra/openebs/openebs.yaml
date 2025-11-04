@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: openebs/openebs
+    chart: openebs
     repoURL: https://openebs.github.io/openebs
-    targetRevision: 4.3.3
+    targetRevision: 4.3.2
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

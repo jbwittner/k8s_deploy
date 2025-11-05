@@ -1,5 +1,0 @@
-monitoring:
-  enabled: true
-csi:
-  serviceMonitor:
-    enabled: true

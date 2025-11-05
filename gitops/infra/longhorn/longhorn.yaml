@@ -1,21 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: longhorn
+  name: infra-longhorn
   namespace: argocd
 spec:
   syncPolicy:
-    automated:
-      enabled: true
-      prune: true
-      selfHeal: true
     syncOptions:
       - CreateNamespace=true
   project: default
   sources:
     - chart: longhorn
       repoURL: https://charts.longhorn.io/
-      targetRevision: v1.10.0
+      targetRevision: v1.10.0 # Replace with the Longhorn version you'd like to install or upgrade to
       helm:
         values: |
           preUpgradeChecker:

@@ -20,9 +20,6 @@ spec:
         values: |
           preUpgradeChecker:
             jobEnabled: false
-    - repoURL: https://github.com/jbwittner/k8s_deploy
-      targetRevision: main
-      path: gitops/infra/longhorn/namespace.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system

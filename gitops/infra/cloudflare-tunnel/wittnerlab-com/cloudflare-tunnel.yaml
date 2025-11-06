@@ -17,8 +17,24 @@ spec:
       repoURL: https://cloudflare.github.io/helm-charts
       targetRevision: 0.3.2
       helm:
-        valueFiles:
-          - cloudflare-tunnel/cloudflare-tunnel-wittnerlab-com.yaml
+        values: |
+          cloudflare:
+            tunnelName: kubernetes-wittnerlab-com
+            tunnelId: a43b34e6-c752-44d1-99a5-cefa29a1fe53
+            secretName: cloudflare-tunnel-credentials
+            ingress:
+              - hostname: "*.wittnerlab.com"
+                service: "https://ingress-nginx-release-controller.ingress-nginx.svc.cluster.local:443"
+                originRequest:
+                  noTLSVerify: true
+          resources:
+            limits:
+              cpu: "100m"
+              memory: "128Mi"
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+          replicaCount: 2
   destination:
     server: https://kubernetes.default.svc
     namespace: cloudflare-wittnerlab-com

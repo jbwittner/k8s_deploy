@@ -18,7 +18,7 @@ spec:
       targetRevision: 0.3.2
       helm:
         valueFiles:
-          - cloudflare-tunnel-wittnerlab-com.yaml
+          - cloudflare-tunnel/cloudflare-tunnel-wittnerlab-com.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: cloudflare-wittnerlab-com

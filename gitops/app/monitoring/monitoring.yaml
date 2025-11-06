@@ -1,0 +1,47 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-monitoring
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - chart: kube-prometheus-stack
+      repoURL: https://prometheus-community.github.io/helm-charts
+      targetRevision: 69.7.2
+      helm:
+        values: |
+          grafana:
+            defaultDashboardsInterval: 10m
+            ingress:
+              enabled: true
+              annotations:
+                external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+                external-dns.alpha.kubernetes.io/hostname: grafana.wittnerlab.com
+                external-dns.alpha.kubernetes.io/target: 9110d4dd-b637-4907-8ff3-cd54a0ddfbc8.cfargotunnel.com
+              hosts: 
+                - grafana.wittnerlab.com
+            admin:
+              existingSecret: monitoring-secret
+              userKey: admin_login
+              passwordKey: admin_password
+          prometheus:
+            prometheusSpec:
+              retention: 7d    
+              storageSpec: 
+                volumeClaimTemplate:
+                  spec:
+                    accessModes: ["ReadWriteOnce"]
+                    resources:
+                      requests:
+                        storage: 20Gi
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ingress-nginx

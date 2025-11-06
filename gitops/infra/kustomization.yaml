@@ -5,3 +5,4 @@ resources:
   - longhorn
   - sealed-secrets
   - ingress-nginx
+  - cloudflare-tunnel

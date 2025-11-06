@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - cloudflare-tunnel.yaml
   - cloudflare-tunnel.sealed-secret.yaml
-  - external-dns.yaml
+  - extra-dns.yaml

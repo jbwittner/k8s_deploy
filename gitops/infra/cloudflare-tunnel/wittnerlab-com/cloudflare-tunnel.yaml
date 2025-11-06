@@ -24,7 +24,7 @@ spec:
             secretName: cloudflare-tunnel-credentials
             ingress:
               - hostname: "*.wittnerlab.com"
-                service: "https://ingress-nginx-release-controller.ingress-nginx.svc.cluster.local:443"
+                service: "https://infra-ingress-nginx-controller.ingress-nginx.svc.cluster.local:443"
                 originRequest:
                   noTLSVerify: true
           resources:

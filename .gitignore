@@ -1,5 +1,5 @@
 .env.dev.secret
-secret.yaml
+*.secret.yaml
 cert.pem
 *.kubeconfig
 sealed-secret-key.yaml

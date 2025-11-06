@@ -19,7 +19,7 @@ spec:
       helm:
         values: |
           args:
-            - --kubelet-insecure-tls
+            - --kubelet-insecure-tls # Allow metrics-server to scrape metrics from kubelets with self-signed certificates
   destination:
     server: https://kubernetes.default.svc
     namespace: metrics-server

@@ -41,7 +41,7 @@ spec:
                     accessModes: ["ReadWriteOnce"]
                     resources:
                       requests:
-                        storage: 20Gi
+                        storage: 50Gi
   destination:
     server: https://kubernetes.default.svc
-    namespace: ingress-nginx
+    namespace: monitoring

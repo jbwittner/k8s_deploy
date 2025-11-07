@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra-cloudflare-extra-dns-wittnerlab-com
+  name: infra-cloudflare-extra-dns
   namespace: argocd
 spec:
   project: default

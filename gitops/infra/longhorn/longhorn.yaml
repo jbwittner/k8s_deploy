@@ -9,6 +9,10 @@ spec:
       - CreateNamespace=true
   project: default
   sources:
+    # Source pour les ressources auxiliaires (namespace, secrets, etc.)
+    - repoURL: https://github.com/jbwittner/k8s_deploy
+      targetRevision: main
+      path: gitops/infra/longhorn/resources
     - chart: longhorn
       repoURL: https://charts.longhorn.io/
       targetRevision: v1.10.0 # Replace with the Longhorn version you'd like to install or upgrade to

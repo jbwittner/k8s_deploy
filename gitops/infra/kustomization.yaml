@@ -2,7 +2,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - longhorn
+  - longhorn/longhorn.yaml
   - sealed-secrets/sealed-secrets.yaml
   - ingress-nginx/ingress-nginx.yaml
   - cloudflare-tunnel

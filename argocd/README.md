@@ -2,6 +2,8 @@
 
 ## Installation
 
+https://github.com/argoproj/argo-helm
+
 ```shell
 helm repo add argo https://argoproj.github.io/argo-helm
 ```

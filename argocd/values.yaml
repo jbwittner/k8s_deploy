@@ -8,8 +8,8 @@ server:
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
       external-dns.alpha.kubernetes.io/hostname: argocd.wittnerlab.com
       external-dns.alpha.kubernetes.io/target: 9110d4dd-b637-4907-8ff3-cd54a0ddfbc8.cfargotunnel.com
-#      nginx.ingress.kubernetes.io/ssl-passthrough: "true" # Necessary for ArgoCD to work behind nginx with TLS
-#      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS" # Necessary for ArgoCD to work behind nginx with TLS
-#    tls: true # Enable TLS termination
+      nginx.ingress.kubernetes.io/ssl-passthrough: "true" # Necessary for ArgoCD to work behind nginx with TLS
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS" # Necessary for ArgoCD to work behind nginx with TLS
+    tls: true # Enable TLS termination
     pathType: Prefix
     path: /

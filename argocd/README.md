@@ -20,6 +20,18 @@ helm install --values argocd/values.yaml argocd argo/argo-cd --namespace argocd 
 helm upgrade --values argocd/values.yaml argocd argo/argo-cd --namespace argocd
 ```
 
+Pour permettre au tunnel Cloudflare d'accéder à Argo CD, il faut ajouter l'annotation suivante au service argocd-server:
+
+```yaml
+nginx.ingress.kubernetes.io/ssl-passthrough: "true" # Necessary for ArgoCD to work behind nginx with TLS
+nginx.ingress.kubernetes.io/backend-protocol: "HTTPS" # Necessary for ArgoCD to work behind nginx with TLS
+tls: true # Enable TLS termination
+```
+
+Mais dans un premier temps il faut initialiser sans et tester. Normalement on aura une erreur TOO_MANY_REDIRECTS.
+
+Une fois obtenu il faut ajouter les annotations et relancer.
+
 ## Get default admin password
 
 ```shell

@@ -42,4 +42,4 @@ spec:
           replicaCount: 2
   destination:
     server: https://kubernetes.default.svc
-    namespace: cloudflare-wittnerlab-com
+    namespace: cloudflare-tunnel

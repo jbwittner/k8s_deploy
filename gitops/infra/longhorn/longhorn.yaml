@@ -4,10 +4,14 @@ metadata:
   name: infra-longhorn
   namespace: argocd
 spec:
+  project: default
   syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  project: default
   sources:
     - chart: longhorn
       repoURL: https://charts.longhorn.io/

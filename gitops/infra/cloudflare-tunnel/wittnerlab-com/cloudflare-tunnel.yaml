@@ -13,10 +13,6 @@ spec:
     syncOptions:
       - CreateNamespace=true
   sources:
-    # Source pour les ressources auxiliaires (namespace, secrets, etc.)
-    - repoURL: https://github.com/jbwittner/k8s_deploy
-      targetRevision: main
-      path: gitops/infra/cloudflare-tunnel/wittnerlab-com/resources
     # Source pour le chart Helm
     - chart: cloudflare-tunnel
       repoURL: https://cloudflare.github.io/helm-charts
@@ -40,6 +36,10 @@ spec:
               cpu: "100m"
               memory: "128Mi"
           replicaCount: 2
+    # Source pour les ressources auxiliaires (namespace, secrets, etc.)
+    - repoURL: https://github.com/jbwittner/k8s_deploy
+      targetRevision: main
+      path: gitops/infra/cloudflare-tunnel/wittnerlab-com/resources
   destination:
     server: https://kubernetes.default.svc
     namespace: cloudflare-tunnel

@@ -13,6 +13,11 @@ spec:
     syncOptions:
       - CreateNamespace=true
   sources:
+    # Source pour les ressources auxiliaires (namespace, secrets, etc.)
+    - repoURL: https://github.com/jbwittner/k8s_deploy
+      targetRevision: main
+      path: gitops/infra/cloudflare-tunnel/wittnerlab-com/resources
+    # Source pour le chart Helm
     - chart: cloudflare-tunnel
       repoURL: https://cloudflare.github.io/helm-charts
       targetRevision: 0.3.2

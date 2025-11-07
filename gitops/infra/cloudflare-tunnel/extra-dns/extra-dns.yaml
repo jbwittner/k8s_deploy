@@ -13,6 +13,11 @@ spec:
     syncOptions:
       - CreateNamespace=true
   sources:
+    # Source pour les ressources auxiliaires (namespace, secrets, etc.)
+    - repoURL: https://github.com/jbwittner/k8s_deploy
+      targetRevision: main
+      path: gitops/infra/cloudflare-tunnel/extra-dns/resources
+    # Source pour le chart Helm
     - chart: external-dns
       repoURL: https://kubernetes-sigs.github.io/external-dns
       targetRevision: 1.19.0
@@ -31,4 +36,4 @@ spec:
           - ingress
   destination:
     server: https://kubernetes.default.svc
-    namespace: cloudflare-wittnerlab-com
+    namespace: cloudflare-tunnel

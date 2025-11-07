@@ -1,9 +1,13 @@
 # cloudflare-tunnel
 
-## Génération du secret
+## Génération des secret
 
 ```bash
-cat gitops/infra/cloudflare-tunel/wittnerlab-com/cloudflare-tunnel.secret.yaml | kubeseal --controller-namespace sealed-secrets --controller-name infra-sealed-secrets --format yaml > gitops/infra/cloudflare-tunel/wittnerlab-com/cloudflare-tunnel.sealed-secret.yaml
+cat gitops/infra/cloudflare-tunnel/extra-dns/resources/extra-dns.secret.yaml | kubeseal --controller-namespace sealed-secrets --controller-name infra-sealed-secrets --format yaml > gitops/infra/cloudflare-tunnel/extra-dns/resources/extra-dns.sealed-secret.yaml
+```
+
+```bash
+cat gitops/infra/cloudflare-tunnel/wittnerlab-com/resources/cloudflare-tunnel.secret.yaml | kubeseal --controller-namespace sealed-secrets --controller-name infra-sealed-secrets --format yaml > gitops/infra/cloudflare-tunnel/wittnerlab-com/resources/cloudflare-tunnel.sealed-secret.yaml
 ```
 
 ## Informations sur le tunnel

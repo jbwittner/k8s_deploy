@@ -32,5 +32,9 @@ By default, the Argo CD API server is not exposed with an external IP. To access
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ``` 
 
-## Update the timout reconciliation
+## Delete Argo CD
+
+```shell
+helm uninstall argocd -n argocd
+```
 

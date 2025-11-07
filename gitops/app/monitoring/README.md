@@ -3,7 +3,7 @@
 ## Génération du secret
 
 ```bash
-cat gitops/app/monitoring/monitoring.secret.yaml | kubeseal --controller-namespace sealed-secrets --controller-name infra-sealed-secrets --format yaml > gitops/app/monitoring/monitoring.sealed-secret.yaml
+cat gitops/app/monitoring/resources/monitoring.secret.yaml | kubeseal --controller-namespace sealed-secrets --controller-name infra-sealed-secrets --format yaml > gitops/app/monitoring/resources/monitoring.sealed-secret.yaml
 ```
 
 

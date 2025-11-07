@@ -14,6 +14,11 @@ spec:
       - ServerSideApply=true
       - CreateNamespace=true
   sources:
+    # Source pour les ressources auxiliaires (namespace, secrets, etc.)
+    - repoURL: https://github.com/jbwittner/k8s_deploy
+      targetRevision: main
+      path: gitops/app/monitoring/kustomization.yaml
+    # Source pour le chart Helm
     - chart: kube-prometheus-stack
       repoURL: https://prometheus-community.github.io/helm-charts
       targetRevision: 79.2.1

@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
   - longhorn/longhorn.yaml
   - sealed-secrets/sealed-secrets.yaml
-#  - ingress-nginx/ingress-nginx.yaml
+  - ingress-nginx/ingress-nginx.yaml
 #  - cloudflare-tunnel

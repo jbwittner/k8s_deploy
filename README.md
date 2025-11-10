@@ -2,145 +2,56 @@
 
 Kubernetes cluster management using GitOps with ArgoCD on Talos Linux (OVH infrastructure).
 
-## Deployed Applications
+## Repository Structure
 
-### Infrastructure (`gitops/infra/`)
-- **sealed-secrets**: Encrypted secrets management
-- **ingress-nginx**: Ingress controller
-- **longhorn**: Distributed storage
-- **cloudflare-tunnel**: External access via Cloudflare
-
-### Applications (`gitops/app/`)
-- **metrics-server**: Resource metrics
-- **monitoring**: Prometheus, Grafana, Alertmanager
-
-## Managing Applications with ArgoCD
-
-### Bootstrap the cluster
-
-```bash
-# 1. Install ArgoCD
-kubectl create namespace argocd
-helm repo add argo https://argoproj.github.io/argo-helm
-helm install argocd argo/argo-cd -n argocd -f argocd/values.yaml
-
-# 2. Bootstrap infrastructure
-kubectl apply -f gitops/bootstrap/bootstrap-infra.yaml
-
-# 3. Bootstrap applications
-kubectl apply -f gitops/bootstrap/bootstrap-app.yaml
+```
+├── gitops/             # GitOps configurations
+│   ├── infra/         # Infrastructure components
+│   ├── app/           # Applications
+│   └── bootstrap/     # Bootstrap manifests
+├── argocd/            # ArgoCD installation values
+└── archive/           # Archived configurations
 ```
 
-### Access ArgoCD UI
+## Deployed Components
 
-```bash
-# Get admin password
-kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 -d
+### Infrastructure
+- [**sealed-secrets**](gitops/infra/sealed-secrets/README.md) - Encrypted secrets management
+- [**ingress-nginx**](gitops/infra/ingress-nginx/README.md) - Ingress controller
+- [**longhorn**](gitops/infra/longhorn/README.md) - Distributed storage
+- [**cloudflare-tunnel**](gitops/infra/cloudflare-tunnel/README.md) - External access & DNS
 
-# Port-forward
-kubectl port-forward svc/argocd-server -n argocd 8080:443
-# Open https://localhost:8080
-```
+### Applications
+- [**metrics-server**](gitops/app/metrics-server/README.md) - Resource metrics
+- [**monitoring**](gitops/app/monitoring/README.md) - Prometheus & Grafana
 
-### Add a new application
+## Quick Start
 
-1. Create ArgoCD Application manifest in `gitops/app/<app-name>/<app-name>.yaml`:
+### 1. Install ArgoCD
 
-```yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: app-<app-name>
-  namespace: argocd
-spec:
-  project: default
-  syncPolicy:
-    automated:
-      enabled: true
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-  source:
-    repoURL: https://github.com/jbwittner/k8s_deploy
-    targetRevision: main
-    path: gitops/app/<app-name>/resources
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: <namespace>
-```
+See [ArgoCD installation guide](argocd/README.md).
 
-2. Add to `gitops/app/kustomization.yaml`:
+### 2. Bootstrap the Cluster
 
-```yaml
-resources:
-  - <app-name>/<app-name>.yaml
-```
+See [Bootstrap guide](gitops/bootstrap/README.md).
 
-3. Commit and push - ArgoCD will automatically sync
+### 3. Access ArgoCD
 
-## Managing Secrets
+See [ArgoCD access instructions](argocd/README.md#access-argocd).
 
-Secrets are encrypted using Sealed Secrets:
+## Working with the Repository
 
-```bash
-# 1. Create secret (DON'T commit this file!)
-kubectl create secret generic my-secret \
-  --from-literal=password=supersecret \
-  --dry-run=client -o yaml > my-secret.secret.yaml
+### GitOps Workflow
 
-# 2. Seal the secret
-cat my-secret.secret.yaml | kubeseal \
-  --controller-namespace sealed-secrets \
-  --controller-name infra-sealed-secrets \
-  --format yaml > my-secret.sealed-secret.yaml
+See [GitOps documentation](gitops/README.md) for managing applications and infrastructure.
 
-# 3. Commit only the sealed secret
-git add my-secret.sealed-secret.yaml
-```
+### Managing Secrets
 
-**Naming convention**:
-- `*.secret.yaml` - Plain secrets (gitignored, never commit)
-- `*.sealed-secret.yaml` - Encrypted secrets (commit to git)
+See [Sealed Secrets documentation](gitops/infra/sealed-secrets/README.md).
 
-## Exposing Services via Cloudflare Tunnel
+### Exposing Services
 
-To expose a service externally using Cloudflare Tunnel:
-
-1. Create an Ingress with these annotations:
-
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: my-app
-  namespace: my-namespace
-  annotations:
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-    external-dns.alpha.kubernetes.io/hostname: myapp.wittnerlab.com
-    external-dns.alpha.kubernetes.io/target: <tunnel-id>.cfargotunnel.com
-spec:
-  ingressClassName: nginx
-  rules:
-    - host: myapp.wittnerlab.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: my-app
-                port:
-                  number: 80
-```
-
-2. External DNS will automatically create the DNS record in Cloudflare
-3. Traffic flows: Cloudflare → Tunnel → Ingress NGINX → Service
-
-**Important annotations**:
-- `external-dns.alpha.kubernetes.io/hostname`: Your subdomain
-- `external-dns.alpha.kubernetes.io/target`: Your Cloudflare tunnel endpoint
-- `external-dns.alpha.kubernetes.io/cloudflare-proxied`: Enable Cloudflare proxy
+See [Cloudflare Tunnel documentation](gitops/infra/cloudflare-tunnel/README.md).
 
 ## Useful Commands
 
@@ -148,18 +59,6 @@ spec:
 # List all applications
 kubectl get applications -n argocd
 
-# Watch application status
+# Watch sync status
 kubectl get applications -n argocd -w
-
-# Force sync an application
-kubectl patch application <app-name> -n argocd --type merge -p '{"operation":{"initiatedBy":{"username":"admin"},"sync":{"revision":"HEAD"}}}'
-
-# View sealed secrets
-kubectl get sealedsecrets -A
 ```
-
-## Documentation
-
-- [Sealed Secrets](gitops/infra/sealed-secrets/README.md)
-- [Cloudflare Tunnel](gitops/infra/cloudflare-tunnel/README.md)
-- [Monitoring](gitops/app/monitoring/README.md)

@@ -1,54 +1,63 @@
-# Documentation
+# ArgoCD Installation
+
+This directory contains the Helm values configuration for ArgoCD deployment.
 
 ## Installation
 
-https://github.com/argoproj/argo-helm
-
-```shell
+```bash
+# Add ArgoCD Helm repository
 helm repo add argo https://argoproj.github.io/argo-helm
+helm repo update
+
+# Install ArgoCD
+helm install argocd argo/argo-cd \
+  --namespace argocd \
+  --create-namespace \
+  --values argocd/values.yaml
 ```
 
-```shell
-helm search repo argo
+## Access ArgoCD
+
+```bash
+# Get admin password
+kubectl get secret argocd-initial-admin-secret -n argocd \
+  -o jsonpath='{.data.password}' | base64 -d
+
+# Port-forward to access UI
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+
+# Open https://localhost:8080
+# Username: admin
+# Password: (from command above)
 ```
 
-```shell
-helm install --values argocd/values.yaml argocd argo/argo-cd --namespace argocd --create-namespace
+## Upgrade
+
+```bash
+helm upgrade argocd argo/argo-cd \
+  --namespace argocd \
+  --values argocd/values.yaml
 ```
 
-```shell
-helm upgrade --values argocd/values.yaml argocd argo/argo-cd --namespace argocd
-```
+## Cloudflare Tunnel Integration
 
-Pour permettre au tunnel Cloudflare d'accéder à Argo CD, il faut ajouter l'annotation suivante au service argocd-server:
+To expose ArgoCD behind Cloudflare Tunnel with Ingress NGINX, the following annotations are required:
 
 ```yaml
-nginx.ingress.kubernetes.io/ssl-passthrough: "true" # Necessary for ArgoCD to work behind nginx with TLS
-nginx.ingress.kubernetes.io/backend-protocol: "HTTPS" # Necessary for ArgoCD to work behind nginx with TLS
-tls: true # Enable TLS termination
+nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 ```
 
-Mais dans un premier temps il faut initialiser sans et tester. Normalement on aura une erreur TOO_MANY_REDIRECTS.
+**Note**: If you encounter `TOO_MANY_REDIRECTS` errors, ensure these annotations are properly configured.
 
-Une fois obtenu il faut ajouter les annotations et relancer.
+## Uninstall
 
-## Get default admin password
-
-```shell
-kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 -d
-```
-
-## Accessing the Argo CD web UI
-
-By default, the Argo CD API server is not exposed with an external IP. To access the Argo CD web UI, you can port-forward the service to your local machine:
-
-```shell
-kubectl port-forward svc/argocd-server -n argocd 8080:443
-``` 
-
-## Delete Argo CD
-
-```shell
+```bash
 helm uninstall argocd -n argocd
+kubectl delete namespace argocd
 ```
+
+## Reference
+
+- [ArgoCD Helm Chart](https://github.com/argoproj/argo-helm)
 

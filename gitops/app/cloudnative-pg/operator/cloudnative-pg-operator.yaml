@@ -12,6 +12,7 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true 
   sources:
     - chart: cloudnative-pg
       repoURL: https://cloudnative-pg.github.io/charts

@@ -24,6 +24,7 @@ Kubernetes cluster management using GitOps with ArgoCD on Talos Linux (OVH infra
 ### Applications
 - [**metrics-server**](gitops/app/metrics-server/README.md) - Resource metrics
 - [**monitoring**](gitops/app/monitoring/README.md) - Prometheus & Grafana
+- [**cloudnative-pg**](gitops/app/cloudnative-pg/README.md) - PostgreSQL
 
 ## Quick Start
 

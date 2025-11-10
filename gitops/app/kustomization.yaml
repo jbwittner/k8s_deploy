@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - monitoring/monitoring.yaml
   - metrics-server/metrics-server.yaml
+  - cloudnative-pg/cloudnative-pg.yaml

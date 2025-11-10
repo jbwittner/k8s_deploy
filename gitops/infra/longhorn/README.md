@@ -28,15 +28,15 @@ To add additional disks to specific nodes, use the patch files in this directory
 ```bash
 # Node w-ns3058844
 kubectl patch nodes.longhorn.io w-ns3058844 -n longhorn-system \
-  --type merge --patch-file gitops/infra/longhorn/add-disk-w-ns3058844.patch.yaml
+  --type merge --patch-file gitops/infra/longhorn/resources/add-disk-w-ns3058844.patch.yaml
 
 # Node w-ns3048244
 kubectl patch nodes.longhorn.io w-ns3048244 -n longhorn-system \
-  --type merge --patch-file gitops/infra/longhorn/add-disk-w-ns3048244.patch.yaml
+  --type merge --patch-file gitops/infra/longhorn/resources/add-disk-w-ns3048244.patch.yaml
 
 # Node w-ns3106816
 kubectl patch nodes.longhorn.io w-ns3106816 -n longhorn-system \
-  --type merge --patch-file gitops/infra/longhorn/add-disk-w-ns3106816.patch.yaml
+  --type merge --patch-file gitops/infra/longhorn/resources/add-disk-w-ns3106816.patch.yaml
 ```
 
 ## Usage

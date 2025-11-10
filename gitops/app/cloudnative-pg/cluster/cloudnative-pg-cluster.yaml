@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-cloudnative-pg-cluster
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - chart: cluster
+      repoURL: https://cloudnative-pg.github.io/charts
+      targetRevision: 0.3.1
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: databases

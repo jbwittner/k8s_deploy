@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-cloudnative-pg
+  name: app-cloudnative-pg-operator
   namespace: argocd
 spec:
   project: default
@@ -13,7 +13,7 @@ spec:
     syncOptions:
       - CreateNamespace=true
   sources:
-    - chart: cluster
+    - chart: cnpg
       repoURL: https://cloudnative-pg.github.io/charts
       targetRevision: 0.26.1
   destination:

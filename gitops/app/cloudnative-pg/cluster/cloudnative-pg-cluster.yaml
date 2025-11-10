@@ -16,6 +16,13 @@ spec:
     - chart: cluster
       repoURL: https://cloudnative-pg.github.io/charts
       targetRevision: 0.3.1
+      helm:
+        values: |
+          cluster:
+            monitoring:
+              enabled: true
+            storage:
+              size: 50Gi
   destination:
     server: https://kubernetes.default.svc
     namespace: databases

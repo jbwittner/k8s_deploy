@@ -20,6 +20,8 @@ spec:
       helm:
         values: |
           monitoring:
+            podMonitorAdditionalLabels:
+              release: prometheus-stack
             podMonitorEnabled: true
             grafanaDashboard:
               create: true

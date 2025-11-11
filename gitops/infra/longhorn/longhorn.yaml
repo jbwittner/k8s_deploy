@@ -8,7 +8,6 @@ spec:
   syncPolicy:
     automated:
       enabled: true
-      prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
@@ -18,6 +17,8 @@ spec:
       targetRevision: v1.10.0 # Replace with the Longhorn version you'd like to install or upgrade to
       helm:
         values: |
+          metrics:
+            serviceMonitor.enabled: true
           preUpgradeChecker:
             jobEnabled: false
       # Source pour les ressources auxiliaires (namespace, secrets, etc.)

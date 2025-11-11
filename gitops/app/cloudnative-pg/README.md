@@ -90,6 +90,51 @@ spec:
     namespace: databases
 ```
 
+## Monitoring and Observability
+
+To enable metrics collection for Grafana dashboards through Prometheus, you need to create PodMonitor resources. These are configured in the monitoring application at `gitops/app/monitoring/resources/podmonitor-cloudnative-pg.yaml`:
+
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: podmonitor-cloudnative-pg-cluster
+  labels:
+    release: app-monitoring
+spec:
+  namespaceSelector:
+    matchNames:
+      - databases
+  selector:
+    matchLabels:
+      cnpg.io/cluster: app-cloudnative-pg-cluster
+  podMetricsEndpoints:
+  - port: metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: podmonitor-cloudnative-pg-operator
+  labels:
+    release: app-monitoring
+spec:
+  namespaceSelector:
+    matchNames:
+      - cnpg-system
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cloudnative-pg
+  podMetricsEndpoints:
+  - port: metrics
+```
+
+These PodMonitors enable:
+- Metrics collection from CloudNative-PG operator
+- Metrics collection from PostgreSQL cluster instances
+- Integration with Grafana dashboards for visualization
+
+**Important**: The `release: app-monitoring` label is required for the Prometheus Operator to discover and scrape these PodMonitors.
+
 ## Verification
 
 Check operator deployment:
@@ -103,6 +148,13 @@ kubectl logs -n cnpg-system -l app.kubernetes.io/name=cloudnative-pg
 
 # List PostgreSQL clusters
 kubectl get cluster -A
+
+# Verify PodMonitors are created
+kubectl get podmonitors -n monitoring
+
+# Check Prometheus targets
+kubectl port-forward -n monitoring svc/app-monitoring-kube-prom-prometheus 9090:9090
+# Then visit http://localhost:9090/targets and look for cloudnative-pg targets
 ```
 
 ## Enabling the PostgreSQL Cluster

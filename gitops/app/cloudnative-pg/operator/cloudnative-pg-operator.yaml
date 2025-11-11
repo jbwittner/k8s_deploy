@@ -17,14 +17,6 @@ spec:
     - chart: cloudnative-pg
       repoURL: https://cloudnative-pg.github.io/charts
       targetRevision: 0.26.1
-      helm:
-        values: |
-          monitoring:
-            podMonitorAdditionalLabels:
-              release: prometheus-stack
-            podMonitorEnabled: true
-            grafanaDashboard:
-              create: true
   destination:
     server: https://kubernetes.default.svc
     namespace: cnpg-system

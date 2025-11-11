@@ -44,6 +44,8 @@ spec:
                     resources:
                       requests:
                         storage: 50Gi
+          kubelet:
+            enabled: true
     # Source pour les ressources auxiliaires (namespace, secrets, etc.)
     - repoURL: https://github.com/jbwittner/k8s_deploy
       targetRevision: main

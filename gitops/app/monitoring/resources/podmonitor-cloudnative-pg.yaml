@@ -3,6 +3,9 @@ kind: PodMonitor
 metadata:
   name: podmonitor-cloudnative-pg-cluster
 spec:
+  namespaceSelector:
+    matchNames:
+      - database
   selector:
     matchLabels:
       cnpg.io/cluster: app-cloudnative-pg-cluster

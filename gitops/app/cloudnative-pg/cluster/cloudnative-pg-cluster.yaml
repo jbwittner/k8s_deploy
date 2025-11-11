@@ -19,17 +19,12 @@ spec:
       helm:
         values: |
           version:
-            major: "18"
+            postgresql: "18"
           cluster:
             monitoring:
               enabled: true
             storage:
               size: 50Gi
-          imageCatalog:
-            create: true
-            images:
-              - major: 18
-                image: ghcr.io/cloudnative-pg/postgresql:18.0
   destination:
     server: https://kubernetes.default.svc
     namespace: databases

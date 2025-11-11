@@ -17,5 +17,6 @@ server:
     #tls: true # Enable TLS termination
     pathType: Prefix
     path: /
-  data:
-    server.insecure: "true" # Disable TLS verification for self-signed certs
+  configs:
+    cm:
+      statusbadge.enabled: true

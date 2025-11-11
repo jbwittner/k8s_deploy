@@ -5,7 +5,7 @@ metadata:
 spec:
   namespaceSelector:
     matchNames:
-      - database
+      - cnpg-system
   selector:
     matchLabels:
       cnpg.io/cluster: app-cloudnative-pg-cluster

@@ -5,9 +5,6 @@ metadata:
   labels:
     release: app-monitoring
 spec:
-  namespaceSelector:
-    matchNames:
-      - databases
   selector:
     matchLabels:
       cnpg.io/cluster: app-cloudnative-pg-cluster

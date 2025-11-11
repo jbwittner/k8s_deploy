@@ -2,6 +2,8 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: podmonitor-cloudnative-pg-cluster
+  labels:
+    release: app-monitoring
 spec:
   namespaceSelector:
     matchNames:

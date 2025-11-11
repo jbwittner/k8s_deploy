@@ -18,6 +18,8 @@ spec:
       targetRevision: 0.3.1
       helm:
         values: |
+          version:
+            major: "18"
           cluster:
             monitoring:
               enabled: true

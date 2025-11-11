@@ -8,9 +8,24 @@ spec:
   namespaceSelector:
     matchNames:
       - databases
-      - cnpg-system
   selector:
     matchLabels:
       cnpg.io/cluster: app-cloudnative-pg-cluster
+  podMetricsEndpoints:
+  - port: metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: podmonitor-cloudnative-pg-operator
+  labels:
+    release: app-monitoring
+spec:
+  namespaceSelector:
+    matchNames:
+      - cnpg-system
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cloudnative-pg
   podMetricsEndpoints:
   - port: metrics

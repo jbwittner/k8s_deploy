@@ -19,6 +19,7 @@ spec:
       helm:
         values: |
           authentik:
+            secret_key: S3Sd8v7Ej6A3j8YHXEbYkkKBs0BsIl
             postgresql:
               host: app-cloudnative-pg-cluster-rw.database.svc.cluster.local
               name: authentik

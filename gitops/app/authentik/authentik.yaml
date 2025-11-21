@@ -1,0 +1,60 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-authentik
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - chart: authentik/authentik
+      repoURL: https://charts.goauthentik.io
+      targetRevision: 3.13.0
+      helm:
+        values: |
+          authentik:
+            postgresql:
+              host: app-cloudnative-pg-cluster-rw.database.svc.cluster.local
+              name: authentik
+              user: file:///postgres-creds/username
+              password: file:///postgres-creds/password
+          server:
+            ingress:
+              enabled: true
+              ingressClassName: nginx
+              annotations:
+                external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+                external-dns.alpha.kubernetes.io/hostname: authentik.wittnerlab.com
+                external-dns.alpha.kubernetes.io/target: 9110d4dd-b637-4907-8ff3-cd54a0ddfbc8.cfargotunnel.com
+              hosts: 
+                - authentik.wittnerlab.com
+            volumes:
+              - name: postgres-creds
+                secret:
+                  secretName: authentik-postgres-credentials
+            volumeMounts:
+              - name: postgres-creds
+                mountPath: /postgres-creds
+                readOnly: true
+          worker:
+            volumes:
+              - name: postgres-creds
+                secret:
+                  secretName: authentik-postgres-credentials
+            volumeMounts:
+              - name: postgres-creds
+                mountPath: /postgres-creds
+                readOnly: true
+    # Source pour les ressources auxiliaires (namespace, secrets, etc.)
+    - repoURL: https://github.com/jbwittner/k8s_deploy
+      targetRevision: main
+      path: gitops/app/authentik/resources
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: authentik

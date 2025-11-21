@@ -21,7 +21,7 @@ spec:
           authentik:
             secret_key: S3Sd8v7Ej6A3j8YHXEbYkkKBs0BsIl
             postgresql:
-              host: app-cloudnative-pg-cluster-rw.database.svc.cluster.local
+              host: app-cloudnative-pg-cluster-rw.databases.svc.cluster.local
               name: authentik
               user: file:///postgres-creds/username
               password: file:///postgres-creds/password

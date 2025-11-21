@@ -2,7 +2,7 @@ global:
   domain: argocd.wittnerlab.com
 server:
   ingress:
-    enabled: true
+    enabled: false
     annotations:
       ingressClassName: nginx
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"

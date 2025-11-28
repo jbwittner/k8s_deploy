@@ -36,6 +36,9 @@
     3. Commit ONLY `sealed-secret.yaml`.
 - **Location**: Place `sealed-secret.yaml` in the component's `resources/` directory.
 
+### Ignored Files
+Ignore the files in `archive` folder.
+
 ## Critical Conventions
 
 ### Naming
